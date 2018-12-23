@@ -167,11 +167,11 @@ create table BasisMark(
 
 --Абитуриент_Вступительные испытания
 create table AbiturietnEntranceExam(
-	grouping text,
-	number_in_group text,
-	date_of_exam date,
-	score int,
-	mark int,
+	grouping text,	        -- группа
+	number_in_group text,	-- порядковый номер в группе
+	date_of_exam date,	-- дата испытания
+	score int,		-- балл
+	mark int,		-- отметка сдачи
 
 	--Внешние ключи
 	foreign key (id_abiturient) references Abiturietn(aid) on update cascade,
