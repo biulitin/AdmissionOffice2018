@@ -155,7 +155,7 @@ create table EntranceExam(
 	id int primary key,	-- идентификатор  
 	name text,		-- наименование
 	code_fic text,		--код_ФИС
-	min_score		--минимальный балл
+	min_score int		--минимальный балл
 );
 
 --Основание_оценки
@@ -165,6 +165,18 @@ create table BasisMark(
 	code_fic text,		--код_ФИС
 );
 
+--Абитуриент_Вступительные испытания
+create table AbiturietnEntranceExam(
+	grouping text,
+	number_in_group text,
+	date_of_exam date,
+	score int,
+	mark int,
 
+	--Внешние ключи
+	foreign key (id_abiturient) references Abiturietn(aid) on update cascade,
+	foreign key (id_entranceExam) references EntranceExam(id) on update cascade,
+	foreign key (id_BasisMark) references BasisMark(id) on update cascade
+);
 
-
+--информации по таблице "Формат испытания" "Язык испытания" не нашла.
