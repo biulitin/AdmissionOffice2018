@@ -122,4 +122,49 @@ create table AbiturientAchievement(
 	foreign key (id_individualAchievement) references IndividualAchievement(id) on update cascade
 );
 
+--Уровень_образования
+create table LevelEducation(
+	id int primary key,     -- идентификатор         
+	name text,		-- наименование
+	code_fic text		--код_ФИС
+);
+
+--Тип_образования
+create table TypeEducation(
+	id int primary key,	-- идентификатор  
+	name text,		-- наименование
+	code_fic text		--код_ФИС
+);
+
+--Абитуриент_Образование
+create table AbiturientEducation(
+	series_document text,    --серия документа
+	number_document text,    --номер документа
+	Name_University text,    --название ВУЗа
+	date_of_issue date,      --дата выдачи 
+	year_of_graduation int,  --год окончания
+	
+	--Внешние ключи
+	foreign key (id_abiturient) references Abiturietn(aid) on update cascade,
+	foreign key (id_levelEducation) references LevelEducation(id) on update cascade,
+	foreign key (id_typeEducation) references TypeEducation(id) on update cascade
+);
+
+--Вступительные_испытания
+create table EntranceExam(
+	id int primary key,	-- идентификатор  
+	name text,		-- наименование
+	code_fic text,		--код_ФИС
+	min_score		--минимальный балл
+);
+
+--Основание_оценки
+create table BasisMark(
+	id int primary key,	-- идентификатор  
+	name text,		-- наименование
+	code_fic text,		--код_ФИС
+);
+
+
+
 
