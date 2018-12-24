@@ -180,3 +180,62 @@ create table AbiturietnEntranceExam(
 );
 
 --информации по таблице "Формат испытания" "Язык испытания" не нашла.
+
+--Специальность
+create table Speciality(
+	id int primary key, --идентификатор
+	name text, --наименование
+	code_fic text  --код_ФИС
+);
+
+--Форма обучения
+create table FormOfEducation(
+	id int primary key, --идентификатор
+	name text, --наименование
+	code_fic text  --код_ФИС
+);
+
+--Конкурсная группа
+create table CompetitiveGroup(
+	id int primary key, --идентификатор
+	name text, --наименование
+	code_fic text  --код_ФИС
+);
+
+--Целевая организация
+create table TargetOrganisation(
+	id int primary key, --идентификатор
+	name text, --наименование
+	code_fic text  --код_ФИС
+);
+
+--План приёма
+create table acceptance_plan(
+	id_speciality int,  --код_специальности
+	id_formOfEduc int,  --форма_обучения
+	id_compGr int,  --конкурсная_группа
+	id_targOrg int,  --целевая организация
+	number_of_places int, --количество_мест
+	number_of_places_quota int, --количество_мест_квота
+--Внешние ключи
+	foreign key(id_speciality) references Speciality(id) on update cascade,
+	foreign key(id_formOfEduc) references FormOfEducation(id) on update cascade,
+	foreign key(id_compGr) references CompetitiveGroup(id) on update cascade,
+	foreign key(id_targOrg) references TargetOrganisation(id) on update cascade
+);
+
+--Тип БВИ
+create table TypeBVI(
+	id int primary key, --идентификатор
+	name text, --наименование
+	code_fic text  --код_ФИС
+);
+
+--Абитуриент БВИ
+create table AbiturientBVI(
+	id_abiturient int,
+	type_bvi int,
+--Внешние ключи
+    foreign key(id_abiturient) references Abiturient(aid) on update cascade, --идентификатор абитуриента
+	foreign key(type_bvi) references TypeBVI(id) on update cascade --тип БВИ
+);
