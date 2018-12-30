@@ -1,4 +1,4 @@
---create database Abiturient;
+﻿--create database Abiturient;
 --go
 
 --Пол
@@ -239,3 +239,123 @@ create table AbiturientBVI(
     foreign key(id_abiturient) references Abiturient(aid) on update cascade, --идентификатор абитуриента
 	foreign key(type_bvi) references TypeBVI(id) on update cascade --тип БВИ
 );
+
+--Абитуриент_Конкурсные группы
+create table AbiturientCompetitiveGroups(
+     aid int,--id абитуриента
+     specialty int, --специальность
+     formOfEducation int,--форма обучения
+     competitiveGroup int, --Конкурсная_группа
+     targetOrganization int, --Целевая_организация
+     BVIright int, --Право_БВИ
+     quotaRight int, --Право_квота
+     preferentialRight int, --Право_ПП
+     competitiveScore int, --Конкурсный_балл
+     sumOfIndividAchievmentScores int, --Сумма баллов за_индивидуальные_достижения
+     noteAboutAdmission int, --Отметка_о_зачислении
+--Внешние ключи
+    foreign key(aid) references Abiturient(aid) on update cascade, --идентификатор абитуриента
+    foreign key(specialty) references Speciality(id) on update cascade, --специальность
+    foreign key(formOfEducation) references FormOfEducation(id) on update cascade, --форма обучения
+    foreign key(competitiveGroup) references CompetitiveGroup(id) on update cascade, --Конкурсная_группа
+    foreign key(targetOrganization) references TargetOrganisation(id) on update cascade --Целевая_организация
+    
+);
+
+--Абитуриент_документ_БВИ
+create table AbiturientDocumentBVI(
+     aid int,--id абитуриента
+     nameOfDocument text, --Наименование документа
+     serial text, --Серия
+     num text, --Номер
+     issuedAt text, --Кем_выдан
+     dateOfIssue date, --Дата_выдачи
+--Внешние ключи
+    foreign key(aid) references Abiturient(aid) on update cascade --идентификатор абитуриента
+     
+);
+
+--Тип Квоты
+create table TypeOfQuote(
+     id int primary key, --идентификатор
+     nameOfQuote text, --Наименование
+     code_fic text --Код_ФИС
+
+);
+
+--Абитуриент_Квота
+create table AbiturientQuote(
+     aid int, --id абитуриента
+     typeOfQuote int, --Тип_Квоты 
+--Внешние ключи
+    foreign key(aid) references Abiturient(aid) on update cascade, --идентификатор абитуриента
+    foreign key(typeOfQuote) references TypeOfQuote(id) on update cascade --Тип Квоты
+);
+     
+--Абитуриент_документ_Квота
+create table AbiturientDocQuote(
+         aid int, --id абитуриента
+         nameOfDocument text, --Наименование документа
+         serial text, --Серия
+         num text, --Номер
+         issuedAt text, --Кем_выдан
+         dateOfIssue date, --Дата_выдачи
+--Внешние ключи
+    foreign key(aid) references Abiturient(aid) on update cascade --идентификатор абитуриента
+     
+);
+
+--Тип ПП 
+create table TypeOfPrefRight(
+        id int primary key, --идентификатор
+        nameOfQuote text, --Наименование
+        code_fic text --Код_ФИС
+
+);
+
+--Абитуриент_Преимущественное право (ПП)
+create table AbiturientPrefRight(
+         aid int, --id абитуриента
+         typeOfPrefRight int, --Тип_ПП
+--Внешние ключи
+    foreign key(aid) references Abiturient(aid) on update cascade, --идентификатор абитуриента
+    foreign key(typeOfPrefRight) references TypeOfPrefRight(id) on update cascade --Тип ПП
+);
+
+--Абитуриент_документ_ПП
+create table AbiturientDocPrefRight(
+         aid int, --id абитуриента
+         nameOfDocument text, --Наименование документа
+         serial text, --Серия
+         num text, --Номер
+         issuedAt text, --Кем_выдан
+         dateOfIssue date, --Дата_выдачи
+--Внешние ключи
+    foreign key(aid) references Abiturient(aid) on update cascade --идентификатор абитуриента
+     
+);
+
+--Категория_допсведений
+create table AdditionalInfCategory(
+        id int primary key, --идентификатор
+        nameOfQuote text, --Наименование
+        code_fic text --Код_ФИС
+
+);
+
+--Абитуриент_допсведения
+create table AbiturientAdditionalInf(
+         aid int, --id абитуриента
+         additionalInfCategory int, --Категория_допсведений
+         nameOfDocument text, --Наименование документа
+         serial text, --Серия
+         num text, --Номер
+         issuedAt text, --Кем_выдан
+         dateOfIssue date, --Дата_выдачи
+--Внешние ключи
+    foreign key(aid) references Abiturient(aid) on update cascade, --идентификатор абитуриента
+    foreign key(additionalInfCategory) references AdditionalInfCategory(id) on update cascade --Категория_допсведений
+     
+);
+
+
