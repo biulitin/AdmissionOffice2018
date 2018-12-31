@@ -358,4 +358,14 @@ create table AbiturientAdditionalInf(
      
 );
 
+--Пользователь
+
+create table User(
+      id int primary key, --идентификатор
+      'login' varchar(200), --логин
+      'password' varchar(200), --пароль
+      fio varchar(200) --ФИО
+);
+      
+
 
