@@ -207,17 +207,30 @@ create table AbiturientEntranceExam(
 	foreign key (id_BasisMark) references BasisMark(id) on update cascade
 );
 
+
+--Олимпиады
+create table Olympiad(
+	id int primary key,	-- идентификатор  
+	name text,		-- наименование
+	codeFIS text		--код_ФИС
+);
+
 --Абитуриент_документы, подтверждающие право на 100 баллов по предметам
 create table AbiturientDocumentsFor100balls(
 	id_abiturient int, --id абитуриента
+	id_olympiad int, --id олимпиады
 	nameOfDocument text, --Наименование документа
+	diplomaDegree text,       --Степень диплома
+	diplomaSubject text,      --Предмет олимпиады
+	olympLevel text,          --Уровень олимпиады
 	series_document text,    --серия документа
 	number_document text,    --номер документа
 	date_of_issue date,      --дата выдачи 
 	issued_by text,          --кем выдан
 	
 --Внешние ключи
-    foreign key(id_abiturient) references Abiturient(aid) on update cascade --идентификатор абитуриента
+	foreign key(id_abiturient) references Abiturient(aid) on update cascade, --идентификатор абитуриента
+	foreign key(id_olympiad) references Olympiad(id) on update cascade --идентификатор абитуриента
 );
 
 --Специальность
