@@ -37,6 +37,7 @@ create table Abiturient (
 	id_nationality int,		--код страны гражданства
 	email text,				--e-mail
 	phoneNumbers text,		--телефоны
+	inn text,				--ИНН
 	needHostel int,			--метка "Нуждается в общежитии"
 	registrationDate Date,	--дата подачи заявления
 	returnDate Date,		--Дата возврата документов
