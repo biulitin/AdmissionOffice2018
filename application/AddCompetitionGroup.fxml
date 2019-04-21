@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.svg.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="406.0" prefWidth="724.0" stylesheets="@for_background.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Pane layoutX="172.0" layoutY="73.0" prefHeight="406.0" prefWidth="724.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="60.0" layoutY="33.0" text="Специальность">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="95.0" text="Конкурсная группа">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="162.0" text="Целевая организация">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="390.0" layoutY="217.0" text="Форма обучения">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="276.0" text="Дата предоставления">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <DatePicker layoutX="231.0" layoutY="274.0" prefHeight="25.0" prefWidth="139.0" />
+            <Button layoutX="586.0" layoutY="342.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="101.0" text="Сохранить">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <ChoiceBox layoutX="195.0" layoutY="31.0" prefHeight="30.0" prefWidth="492.0" />
+            <ChoiceBox layoutX="216.0" layoutY="93.0" prefHeight="30.0" prefWidth="470.0" />
+            <ChoiceBox layoutX="242.0" layoutY="160.0" prefHeight="30.0" prefWidth="445.0" />
+            <ChoiceBox layoutX="536.0" layoutY="214.0" prefHeight="30.0" prefWidth="150.0" />
+            <JFXCheckBox checkedColor="#2171ae" layoutX="475.0" layoutY="276.0" text="Предоставил оригиналы">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </JFXCheckBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

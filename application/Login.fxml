@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@for_background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="200.0" layoutY="71.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane prefHeight="105.0" prefWidth="600.0">
+               <center>
+                  <Label text="Вход" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="36.0" />
+                     </font>
+                  </Label>
+               </center>
+            </BorderPane>
+            <Pane prefHeight="300.0" prefWidth="600.0">
+               <children>
+                  <TextField layoutX="172.0" layoutY="43.0" prefHeight="34.0" prefWidth="257.0" />
+                  <PasswordField layoutX="172.0" layoutY="105.0" prefHeight="34.0" prefWidth="257.0" />
+                  <Label layoutX="85.0" layoutY="50.0" text="Логин:">
+                     <font>
+                        <Font name="Arial Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="85.0" layoutY="112.0" prefHeight="21.0" prefWidth="80.0" text="Пароль:">
+                     <font>
+                        <Font name="Arial Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="349.0" layoutY="169.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Войти">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

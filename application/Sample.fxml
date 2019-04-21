@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="598.0" prefWidth="1354.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <top>
+      <AnchorPane prefHeight="531.0" prefWidth="846.0" BorderPane.alignment="CENTER">
+         <children>
+            <SplitPane dividerPositions="0.05671077504725898" layoutX="190.0" layoutY="73.0" orientation="VERTICAL" prefHeight="598.0" prefWidth="1354.0" AnchorPane.bottomAnchor="-67.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="93.0" prefWidth="844.0">
+                     <children>
+                        <MenuBar layoutX="-2.0" layoutY="1.0" prefHeight="27.0" prefWidth="844.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="Справочники">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Вступительные испытания" />
+                                    <MenuItem mnemonicParsing="false" text="Блоки испытаний" />
+                                    <MenuItem text="Основания для оценки" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Типы паспортов" />
+                                    <MenuItem mnemonicParsing="false" text="Регионы" />
+                                    <MenuItem mnemonicParsing="false" text="Типы населенных пунктов" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Пол" />
+                                    <MenuItem mnemonicParsing="false" text="Гражданство" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Причины возврата" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Индивидуальные" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Направления обучения" />
+                                    <MenuItem mnemonicParsing="false" text="Формы обучения" />
+                                    <MenuItem mnemonicParsing="false" text="Специальности" />
+                                    <MenuItem mnemonicParsing="false" text="Кафедры" />
+                                    <MenuItem mnemonicParsing="false" text="Конкурсные группы" />
+                                    <MenuItem mnemonicParsing="false" text="Целевые организации" />
+                                    <MenuItem mnemonicParsing="false" text="Стандарты образования" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="План приема" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Пользователи" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Документы">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Заявление" />
+                                    <MenuItem mnemonicParsing="false" text="Опись/расписка" />
+                                    <MenuItem mnemonicParsing="false" text="Лист вступительных испытаний" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Отчетность">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Список подавших докуметы" />
+                                    <MenuItem mnemonicParsing="false" text="Списки групп на вступительные" />
+                                    <MenuItem mnemonicParsing="false" text="Результаты вступительных" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Статистика" />
+                              </items>
+                            </Menu>
+                              <Menu mnemonicParsing="false" text="Конкурс">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Предварительные расчёты" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Сыграть конкурс" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Внутренний рейтинг" />
+                                    <MenuItem mnemonicParsing="false" text="Ранжированный список" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Конкурсный список" />
+                                    <MenuItem mnemonicParsing="false" text="Конкурсный список (В.п.)" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Сброс результатов конкурса" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Экспорт">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Целевые организации" />
+                                    <MenuItem mnemonicParsing="false" text="Конкурсные группы" />
+                                    <MenuItem mnemonicParsing="false" text="План приема" />
+                                    <MenuItem mnemonicParsing="false" text="Заявления абитуриентов" />
+                                    <MenuItem mnemonicParsing="false" text="Результаты конкурса" />
+                                 </items>
+                              </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1352.0">
+                     <children>
+                        <TableView layoutX="12.0" layoutY="8.0" prefHeight="518.0" prefWidth="261.0">
+                          <columns>
+                            <TableColumn prefWidth="64.0" text="№ Л/д" />
+                            <TableColumn prefWidth="81.0" text="Фамилия" />
+                              <TableColumn minWidth="0.0" prefWidth="44.0" text="Имя" />
+                              <TableColumn prefWidth="70.0" text="Отчество" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="531.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Добавить" textAlignment="CENTER" />
+                        <Button layoutX="90.0" layoutY="531.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Редактировать" textAlignment="CENTER" />
+                        <Button layoutX="201.0" layoutY="531.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Удалить" textAlignment="CENTER" />
+                        <TabPane layoutX="286.0" layoutY="289.0" prefHeight="268.0" prefWidth="1060.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Конкурсные группы">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                            <Tab text="Вступительные испытания">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                              <Tab text="Индивидуальные достижения">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Привилегии">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="612.0" />
+                                 </content>
+                              </Tab>
+                              <Tab text="100 б.">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Образование">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Адрес и контакты">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Паспорт и ИНН">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Дополнительные сведения">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                        <TitledPane animated="false" collapsible="false" layoutX="286.0" layoutY="8.0" text="Основная информация">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="247.0" prefWidth="1060.0" />
+                          </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="406.0" prefWidth="716.0" stylesheets="@for_background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="296.0" layoutY="84.0" prefHeight="332.0" prefWidth="716.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="337.0" prefWidth="716.0">
+               <children>
+                  <TableView layoutX="42.0" layoutY="45.0" prefHeight="253.0" prefWidth="632.0">
+                    <columns>
+                      <TableColumn prefWidth="57.0" text="id" />
+                      <TableColumn prefWidth="297.0" text="Наименование" />
+                        <TableColumn prefWidth="277.0" text="Код в ФИС" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Button layoutX="398.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Редактировать">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="546.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Сохранить">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="406.0" prefWidth="724.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <ScrollPane prefViewportHeight="406.0" prefViewportWidth="724.0">
+         <content>
+            <Pane layoutX="106.0" layoutY="51.0" prefHeight="406.0" prefWidth="724.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView layoutX="24.0" layoutY="20.0" prefHeight="261.0" prefWidth="676.0">
+                    <columns>
+                      <TableColumn prefWidth="95.0" text="Специальность" />
+                      <TableColumn prefWidth="110.0" text="Форма обучения" />
+                        <TableColumn prefWidth="116.0" text="Конкурсная группа" />
+                        <TableColumn minWidth="4.0" prefWidth="97.0" text="Целевая организация" />
+                        <TableColumn minWidth="9.0" prefWidth="45.0" text="БВИ" />
+                        <TableColumn prefWidth="40.0" text="Квота" />
+                        <TableColumn prefWidth="33.0" text="ПП" />
+                        <TableColumn prefWidth="71.0" text="Конк. балл" />
+                        <TableColumn prefWidth="68.0" text="Балл ИД" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="24.0" layoutY="302.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="676.0" text="Добавить новую конкурсную группу">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="477.0" layoutY="356.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="118.0" text="Редактировать">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="625.0" layoutY="356.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Удалить">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
