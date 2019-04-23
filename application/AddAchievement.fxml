@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="716.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ulitin.AddAchievementController">
+    <stylesheets>
+        <URL value="@addachievement.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="58.0" layoutY="58.0" text="Название документа" />
+      <TextField layoutX="193.0" layoutY="54.0" prefHeight="25.0" prefWidth="456.0" />
+      <TextField layoutX="105.0" layoutY="113.0" prefHeight="25.0" prefWidth="99.0" />
+      <TextField layoutX="315.0" layoutY="113.0" prefHeight="25.0" prefWidth="99.0" />
+      <TextField layoutX="551.0" layoutY="113.0" prefHeight="25.0" prefWidth="99.0" />
+      <Label layoutX="58.0" layoutY="117.0" text="Серия" />
+      <Label layoutX="263.0" layoutY="117.0" text="Номер" />
+      <Label layoutX="470.0" layoutY="117.0" text="Дата выдачи" />
+      <Label layoutX="58.0" layoutY="175.0" text="Кем выдан" />
+      <TextArea layoutX="134.0" layoutY="170.0" prefHeight="96.0" prefWidth="517.0" wrapText="true" />
+      <Button layoutX="576.0" layoutY="288.0" mnemonicParsing="false" text="Сохранить" />
+   </children>
+</AnchorPane>

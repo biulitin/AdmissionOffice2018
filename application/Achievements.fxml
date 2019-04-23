@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="716.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ulitin.AchievementsController">
+    <stylesheets>
+        <URL value="@achievements.css" />
+    </stylesheets>
+   <children>
+      <TableView editable="true" layoutX="51.0" layoutY="46.0" prefHeight="200.0" prefWidth="594.0">
+        <columns>
+          <TableColumn prefWidth="186.0" text="Наименование" />
+          <TableColumn prefWidth="89.0" text="Балл" />
+            <TableColumn prefWidth="318.0" text="Подтверждающий документ" />
+        </columns>
+      </TableView>
+      <Button layoutX="51.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="594.0" text="Добавить новое достижение" />
+      <Button layoutX="571.0" layoutY="327.0" mnemonicParsing="false" text="Сохранить" />
+      <Button layoutX="437.0" layoutY="327.0" mnemonicParsing="false" text="Редактировать" />
+   </children>
+</AnchorPane>

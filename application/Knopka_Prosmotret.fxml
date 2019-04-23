@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<ScrollPane prefHeight="473.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="771.0">
+         <children>
+            <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="460.0" prefWidth="677.0">
+               <children>
+                  <Label layoutX="17.0" layoutY="26.0" text="Название документа">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="208.0" layoutY="24.0" prefHeight="25.0" prefWidth="516.0" />
+                  <Label layoutX="16.0" layoutY="96.0" text="Степень">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="92.0" layoutY="94.0" prefHeight="25.0" prefWidth="108.0" />
+                  <Label layoutX="208.0" layoutY="96.0" text="Предмет">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="291.0" layoutY="94.0" prefHeight="25.0" prefWidth="108.0" />
+                  <Label layoutX="423.0" layoutY="82.0" lineSpacing="2.0" prefHeight="49.0" prefWidth="172.0" text="Уровень олимпиады" textAlignment="CENTER" textOverrun="CLIP">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="605.0" layoutY="94.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label layoutX="16.0" layoutY="150.0" text="Серия">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="91.0" layoutY="149.0" prefHeight="25.0" prefWidth="110.0" />
+                  <Label layoutX="217.0" layoutY="149.0" text="Номер">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="292.0" layoutY="147.0" prefHeight="25.0" prefWidth="109.0" />
+                  <Label layoutX="455.0" layoutY="149.0" text="Дата выдачи">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="605.0" layoutY="147.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label layoutX="17.0" layoutY="244.0" text="Кем выдан">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="121.0" layoutY="244.0" prefHeight="85.0" prefWidth="605.0" />
+                  <Button layoutX="632.0" layoutY="398.0" mnemonicParsing="false" text="Сохранить">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

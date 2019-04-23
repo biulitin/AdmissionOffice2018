@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="716.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ulitin.ExamController">
+    <stylesheets>
+        <URL value="@exam.css" />
+    </stylesheets>
+   <children>
+      <TableView layoutX="46.0" layoutY="41.0" prefHeight="227.0" prefWidth="612.0">
+        <columns>
+          <TableColumn prefWidth="128.0" text="Наименование ВИ" />
+          <TableColumn prefWidth="100.0" text="Формат ВИ" />
+            <TableColumn prefWidth="78.0" text="Язык ВИ" />
+            <TableColumn prefWidth="63.0" text="Группа" />
+            <TableColumn prefWidth="114.0" text="Дата испытания" />
+            <TableColumn prefWidth="45.0" text="Балл" />
+            <TableColumn prefWidth="83.0" text="Право на 10" />
+        </columns>
+      </TableView>
+      <CheckBox layoutX="440.0" layoutY="285.0" mnemonicParsing="false" text="Нуждается в специальных условиях" />
+      <Button layoutX="584.0" layoutY="328.0" mnemonicParsing="false" text="Сохранить" />
+      <Button layoutX="463.0" layoutY="328.0" mnemonicParsing="false" text="Редактировать" />
+   </children>
+</AnchorPane>
