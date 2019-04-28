@@ -4,66 +4,67 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <effect>
-      <InnerShadow />
-   </effect>
+<AnchorPane prefHeight="306.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="406.0" prefWidth="716.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Button layoutX="373.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Редактировать">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="553.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Сохранить">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Button>
-            <Label layoutX="25.0" layoutY="30.0" text="Уровень образования">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="65.0" layoutY="66.0" text="Тип образования">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField layoutX="88.0" layoutY="124.0" prefHeight="30.0" prefWidth="150.0" />
-            <Label layoutX="25.0" layoutY="125.0" text="Серия">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField layoutX="353.0" layoutY="124.0" prefHeight="30.0" prefWidth="150.0" />
-            <Label layoutX="283.0" layoutY="125.0" text="Номер">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField layoutX="116.0" layoutY="234.0" prefHeight="88.0" prefWidth="542.0" />
-            <Label layoutX="20.0" layoutY="234.0" text="Кем выдан">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="23.0" layoutY="176.0" text="Дата выдачи">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <DatePicker layoutX="143.0" layoutY="175.0" prefHeight="30.0" prefWidth="150.0" />
-            <ComboBox layoutX="218.0" layoutY="31.0" prefHeight="25.0" prefWidth="439.0" />
-            <ComboBox layoutX="218.0" layoutY="67.0" prefHeight="25.0" prefWidth="439.0" />
-         </children>
-      </Pane>
+      <ScrollPane prefHeight="341.0" prefViewportHeight="306.0" prefViewportWidth="724.0" prefWidth="1022.0">
+         <content>
+            <Pane prefHeight="406.0" prefWidth="1030.0">
+               <children>
+                  <Button layoutX="597.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="767.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Сохранить">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="111.0" layoutY="36.0" text="Уровень образования">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="145.0" layoutY="72.0" text="Тип образования">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="169.0" layoutY="127.0" prefHeight="25.0" prefWidth="150.0" />
+                  <Label layoutX="111.0" layoutY="131.0" text="Серия">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="499.0" layoutY="127.0" prefHeight="25.0" prefWidth="150.0" />
+                  <Label layoutX="440.0" layoutY="129.0" text="Номер">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="210.0" layoutY="234.0" prefHeight="88.0" prefWidth="707.0" />
+                  <Label layoutX="111.0" layoutY="234.0" text="Кем выдан">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="111.0" layoutY="180.0" text="Дата выдачи">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker layoutX="210.0" layoutY="178.0" prefHeight="25.0" prefWidth="150.0" />
+                  <ComboBox layoutX="270.0" layoutY="31.0" prefHeight="25.0" prefWidth="650.0" />
+                  <ComboBox layoutX="270.0" layoutY="67.0" prefHeight="25.0" prefWidth="650.0" />
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

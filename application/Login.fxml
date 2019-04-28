@@ -5,8 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@for_background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@for_background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
       <VBox layoutX="200.0" layoutY="71.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -33,7 +32,7 @@
                         <Font name="Arial Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Button layoutX="349.0" layoutY="169.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Войти">
+                  <Button fx:id="enter" layoutX="349.0" layoutY="169.0" mnemonicParsing="false" onAction="#click" prefHeight="30.0" prefWidth="80.0" text="Войти">
                      <font>
                         <Font size="14.0" />
                      </font>

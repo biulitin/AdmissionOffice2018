@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="716.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ulitin.AchievementsController">
+<AnchorPane id="AnchorPane" prefHeight="306.0" prefWidth="1022.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
         <URL value="@achievements.css" />
     </stylesheets>
    <children>
-      <TableView editable="true" layoutX="51.0" layoutY="46.0" prefHeight="200.0" prefWidth="594.0">
-        <columns>
-          <TableColumn prefWidth="186.0" text="Наименование" />
-          <TableColumn prefWidth="89.0" text="Балл" />
-            <TableColumn prefWidth="318.0" text="Подтверждающий документ" />
-        </columns>
-      </TableView>
-      <Button layoutX="51.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="594.0" text="Добавить новое достижение" />
-      <Button layoutX="571.0" layoutY="327.0" mnemonicParsing="false" text="Сохранить" />
-      <Button layoutX="437.0" layoutY="327.0" mnemonicParsing="false" text="Редактировать" />
+      <ScrollPane prefHeight="341.0" prefViewportHeight="306.0" prefViewportWidth="724.0" prefWidth="1022.0">
+         <content>
+            <Pane prefHeight="406.0" prefWidth="1022.0">
+               <children>
+                  <Button layoutX="111.0" layoutY="320.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="800.0" text="Добавить новое достижение" />
+                  <Button layoutX="591.0" layoutY="370.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font></Button>
+                  <Button layoutX="761.0" layoutY="370.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Сохранить">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font></Button>
+                  <TableView editable="true" layoutX="111.0" layoutY="25.0" prefHeight="282.0" prefWidth="800.0">
+                    <columns>
+                      <TableColumn prefWidth="324.0" text="Наименование" />
+                      <TableColumn prefWidth="213.0" text="Балл" />
+                        <TableColumn prefWidth="262.0" text="Подтверждающий документ" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
