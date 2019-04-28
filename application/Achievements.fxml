@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="306.0" prefWidth="1022.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="306.0" prefWidth="1022.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AchievementsController">
     <stylesheets>
         <URL value="@achievements.css" />
     </stylesheets>
@@ -18,20 +23,20 @@
          <content>
             <Pane prefHeight="406.0" prefWidth="1022.0">
                <children>
-                  <Button layoutX="111.0" layoutY="320.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="800.0" text="Добавить новое достижение" />
-                  <Button layoutX="591.0" layoutY="370.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
+                  <Button fx:id="add" disable="true" layoutX="111.0" layoutY="320.0" mnemonicParsing="false" onAction="#clickAdd" prefHeight="25.0" prefWidth="800.0" text="Добавить новое достижение" />
+                  <Button fx:id="edit" layoutX="591.0" layoutY="370.0" mnemonicParsing="false" onAction="#clickEdit" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font></Button>
-                  <Button layoutX="761.0" layoutY="370.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Сохранить">
+                  <Button fx:id="save" disable="true" layoutX="761.0" layoutY="370.0" mnemonicParsing="false" onAction="#clickSave" prefHeight="25.0" prefWidth="150.0" text="Сохранить">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font></Button>
-                  <TableView editable="true" layoutX="111.0" layoutY="25.0" prefHeight="282.0" prefWidth="800.0">
+                  <TableView fx:id="table" layoutX="111.0" layoutY="25.0" prefHeight="282.0" prefWidth="800.0">
                     <columns>
-                      <TableColumn prefWidth="324.0" text="Наименование" />
-                      <TableColumn prefWidth="213.0" text="Балл" />
-                        <TableColumn prefWidth="262.0" text="Подтверждающий документ" />
+                      <TableColumn fx:id="name" editable="false" prefWidth="324.0" text="Наименование" />
+                      <TableColumn fx:id="score" editable="false" prefWidth="213.0" text="Балл" />
+                        <TableColumn fx:id="document" editable="false" prefWidth="262.0" text="Подтверждающий документ" />
                     </columns>
                   </TableView>
                </children>

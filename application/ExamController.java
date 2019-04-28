@@ -75,7 +75,8 @@ group.setEditable(true);
 right100.setEditable(true);
 date.setEditable(true);
 score.setEditable(true);
-
+edit.setDisable(true);
+save.setDisable(false);
  
     }
     
@@ -90,6 +91,8 @@ group.setEditable(false);
 right100.setEditable(false);
 date.setEditable(false);
 score.setEditable(false);
+save.setDisable(true);
+edit.setDisable(false);
     }
 
     @Override

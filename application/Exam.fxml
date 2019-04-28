@@ -36,7 +36,7 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </CheckBox>
-                  <Button fx:id="save" layoutX="761.0" layoutY="356.0" mnemonicParsing="false" onAction="#clickSave" prefHeight="25.0" prefWidth="150.0" text="Сохранить">
+                  <Button fx:id="save" disable="true" layoutX="761.0" layoutY="356.0" mnemonicParsing="false" onAction="#clickSave" prefHeight="25.0" prefWidth="150.0" text="Сохранить">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>

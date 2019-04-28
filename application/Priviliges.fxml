@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -9,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="306.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="306.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PriviligesController">
    <children>
       <ScrollPane prefHeight="341.0" prefViewportHeight="306.0" prefViewportWidth="724.0" prefWidth="1022.0">
          <content>
@@ -19,17 +23,17 @@
                     <content>
                       <AnchorPane layoutX="25.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button layoutX="531.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Удалить">
+                              <Button fx:id="deleteBVI" disable="true" layoutX="531.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickDeleteBVI" prefHeight="25.0" prefWidth="150.0" text="Удалить">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="701.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
+                              <Button fx:id="editBVI" disable="true" layoutX="701.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickEditBVI" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Button>
-                              <TableView layoutX="50.0" layoutY="14.0" pickOnBounds="false" prefHeight="192.0" prefWidth="800.0">
+                              <TableView fx:id="tableBVI" layoutX="50.0" layoutY="14.0" pickOnBounds="false" prefHeight="192.0" prefWidth="800.0">
                                 <columns>
                                   <TableColumn prefWidth="197.0" text="Документ" />
                                   <TableColumn prefWidth="120.0" text="Серия" />
@@ -38,7 +42,7 @@
                                     <TableColumn prefWidth="198.0" text="Кем выдан" />
                                 </columns>
                               </TableView>
-                              <Button layoutX="361.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Добавить">
+                              <Button fx:id="addBVI" layoutX="361.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickAddBVI" prefHeight="25.0" prefWidth="150.0" text="Добавить">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
@@ -54,17 +58,17 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button layoutX="531.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Удалить">
+                              <Button fx:id="deleteQuote" disable="true" layoutX="531.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickDeleteQuote" prefHeight="25.0" prefWidth="150.0" text="Удалить">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="701.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
+                              <Button fx:id="editQuote" disable="true" layoutX="701.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickEditQuote" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Button>
-                              <TableView layoutX="50.0" layoutY="14.0" prefHeight="192.0" prefWidth="800.0">
+                              <TableView fx:id="tableQuote" layoutX="50.0" layoutY="14.0" prefHeight="192.0" prefWidth="800.0">
                                  <columns>
                                     <TableColumn prefWidth="202.0" text="Документ" />
                                     <TableColumn prefWidth="126.0" text="Серия" />
@@ -73,7 +77,7 @@
                                     <TableColumn prefWidth="176.0" text="Кем выдан" />
                                  </columns>
                               </TableView>
-                              <Button layoutX="361.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Добавить">
+                              <Button fx:id="addQuote" layoutX="361.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickAddQuote" prefHeight="25.0" prefWidth="150.0" text="Добавить">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
@@ -89,17 +93,17 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button layoutX="531.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Удалить">
+                              <Button fx:id="deleteRight" disable="true" layoutX="531.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickDeleteRight" prefHeight="25.0" prefWidth="150.0" text="Удалить">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="701.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
+                              <Button fx:id="editRight" disable="true" layoutX="701.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickEditRight" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Button>
-                              <TableView layoutX="50.0" layoutY="14.0" prefHeight="192.0" prefWidth="800.0">
+                              <TableView fx:id="tableRight" layoutX="50.0" layoutY="14.0" prefHeight="192.0" prefWidth="800.0">
                                  <columns>
                                     <TableColumn prefWidth="195.0" text="Документ" />
                                     <TableColumn prefWidth="115.0" text="Серия" />
@@ -108,7 +112,7 @@
                                     <TableColumn prefWidth="199.0" text="Кем выдан" />
                                  </columns>
                               </TableView>
-                              <Button layoutX="361.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Добавить">
+                              <Button fx:id="addRight" layoutX="361.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickAddRight" prefHeight="25.0" prefWidth="150.0" text="Добавить">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>

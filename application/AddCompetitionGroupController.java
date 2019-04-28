@@ -18,34 +18,26 @@ import javafx.stage.Stage;
  *
  * @author Марина
  */
-public class DeleteStudentController implements Initializable {
+public class AddCompetitionGroupController implements Initializable {
+
+    @FXML
+    private Button save;
+    
+    @FXML
+    private void clickSave(ActionEvent event) {
+        Stage stage =  (Stage)save.getScene().getWindow();
+                 
+        stage.close();
+    }
 
     /**
      * Initializes the controller class.
      */
-    
-    @FXML
-    private Button no;
-    
-     @FXML
-    private Button yes;
-
-    @FXML
-    void clickYes(ActionEvent event) {
-Stage stage =  (Stage)no.getScene().getWindow();
-                 
-        stage.close();
-    }
-
-    @FXML
-    void clickNo(ActionEvent event) {
-Stage stage =  (Stage)no.getScene().getWindow();
-                 
-        stage.close();
-    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+     
     
 }
