@@ -63,16 +63,16 @@ public class PriviligesController implements Initializable {
 
     @FXML
     private void clickAddBVI(ActionEvent event) {
-        if ("Р”РѕР±Р°РІРёС‚СЊ".equals(addBVI.getText())){
+        if ("Добавить".equals(addBVI.getText())){
         deleteBVI.setDisable(false);
         editBVI.setDisable(false);
         tableBVI.setEditable(true);
-        addBVI.setText("РЎРѕС…СЂР°РЅРёС‚СЊ");}
+        addBVI.setText("Сохранить");}
         else {
             deleteBVI.setDisable(true);
         editBVI.setDisable(true);
         tableBVI.setEditable(false);
-        addBVI.setText("Р”РѕР±Р°РІРёС‚СЊ");
+        addBVI.setText("Добавить");
         }
     }
 

@@ -15,264 +15,230 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import static javafx.scene.input.DataFormat.URL;
- 
+
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class SampleController implements Initializable{
-	
-	
-	 @FXML
-	    private BorderPane border1;
+public class SampleController implements Initializable {
 
-	    @FXML
-	    private AnchorPane tab1;
+	@FXML
+	private BorderPane border1;
 
-	    @FXML
-	    private AnchorPane tab2;
-	    
-	    @FXML
-	    private AnchorPane tab3;
+	@FXML
+	private AnchorPane tab1;
 
-	    @FXML
-	    private AnchorPane tab4;
-	    
-	    @FXML
-	    private AnchorPane tab5;
-	    
-	    @FXML
-	    private AnchorPane tab6;
-	    
-	    @FXML
-	    private AnchorPane tab7;
-	    
-	    @FXML
-	    private AnchorPane tab8;
-	    
-	    @FXML
-	    private AnchorPane tab9;
-            
-            @FXML
-            private Button addition;
-            
-            @FXML
-    private DatePicker birthday;
+	@FXML
+	private AnchorPane tab2;
 
-    @FXML
-    private ComboBox<?> reason;
+	@FXML
+	private AnchorPane tab3;
 
-    @FXML
-    private ComboBox<?> gender;
+	@FXML
+	private AnchorPane tab4;
 
-    @FXML
-    private Button edit;
+	@FXML
+	private AnchorPane tab5;
 
-    @FXML
-    private CheckBox hostel;
-    
-     @FXML
-    private ComboBox<?> citizenship;
-     
-      @FXML
-    private TextField receiveDate;
+	@FXML
+	private AnchorPane tab6;
 
-    @FXML
-    private CheckBox takeDocs;
-    
-    @FXML
-    private TextField patronymic;
+	@FXML
+	private AnchorPane tab7;
 
-    @FXML
-    private TextField returnDate;
-    
-    @FXML
-    private TextField surname;
+	@FXML
+	private AnchorPane tab8;
 
-    @FXML
-    private TextField name;
+	@FXML
+	private AnchorPane tab9;
 
-    @FXML
-    private TextField id;
-    
-    @FXML
-    private Button delete;
+	@FXML
+	private Button addition;
 
+	@FXML
+	private DatePicker birthday;
 
+	@FXML
+	private ComboBox<?> reason;
 
+	@FXML
+	private ComboBox<?> gender;
 
-            @FXML
-            void clickAddition(ActionEvent event) throws IOException{
-                Stage stage;
-                stage = (Stage)addition.getScene().getWindow();
-                // do what you have to do
-               // stage.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAbiturient.fxml"));
-                AnchorPane root1 = (AnchorPane) fxmlLoader.load();
-                stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
-                //stage.setTitle("–î—Ä—É–≥–∞—è —Ñ–æ—Ä–º–∞");
-                stage.setScene(new Scene(root1));
-                stage.setResizable(false);
-                //stage.setMaximized(true);
-                stage.show();
+	@FXML
+	private Button edit;
 
-            }
-            
-            @FXML
-            void clickEdit(ActionEvent event)throws IOException {
-                if ("–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞—Ç—å".equals(edit.getText())) {
-                id.setEditable(true);
-                 name.setEditable(true);
-                  surname.setEditable(true);
-                  patronymic.setEditable(true);
-                   receiveDate.setEditable(true);
-                    returnDate.setEditable(true);
-                    birthday.setMouseTransparent(false);  
-                    birthday.setEditable(true);
-                    gender.setMouseTransparent(false);  
-                    gender.setEditable(true);
-                    reason.setMouseTransparent(false);  
-                    reason.setEditable(true);
-                    citizenship.setMouseTransparent(false);  
-                    citizenship.setEditable(true);
-                    hostel.setMouseTransparent(false);
-                    takeDocs.setMouseTransparent(false);
-                 edit.setText("–°–æ—Ö—Ä–∞–Ω–∏—Ç—å");}
-                else {
-                    id.setEditable(false);
-                 name.setEditable(false);
-                  surname.setEditable(false);
-                  patronymic.setEditable(false);
-                   receiveDate.setEditable(false);
-                    returnDate.setEditable(false);
-                    birthday.setMouseTransparent(true);  
-                    birthday.setEditable(false);
-                    gender.setMouseTransparent(true);  
-                    gender.setEditable(false);
-                    reason.setMouseTransparent(true);  
-                    reason.setEditable(false);
-                    citizenship.setMouseTransparent(true);  
-                    citizenship.setEditable(false);
-                    hostel.setMouseTransparent(true);
-                    takeDocs.setMouseTransparent(true);
-                 edit.setText("–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞—Ç—å");
-                }
+	@FXML
+	private CheckBox hostel;
 
+	@FXML
+	private ComboBox<?> citizenship;
 
-    }
+	@FXML
+	private TextField receiveDate;
 
+	@FXML
+	private CheckBox takeDocs;
 
-             @FXML
-    void clickDelete(ActionEvent event) throws IOException{
-                Stage stage;
-                stage = (Stage)delete.getScene().getWindow();
-                // do what you have to do
-               // stage.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteStudent.fxml"));
-                AnchorPane root1 = (AnchorPane) fxmlLoader.load();
-                stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
-                //stage.setTitle("–î—Ä—É–≥–∞—è —Ñ–æ—Ä–º–∞");
-                stage.setScene(new Scene(root1));
-                stage.setResizable(false);
-                //stage.setMaximized(true);
-                stage.show();
-    }
-	    
-	       @Override
-	    public void initialize(URL location, ResourceBundle resources)
-	    {
-                //birthday.setValue(LocalDate.now());
-	        FXMLLoader loader = new FXMLLoader();
-	        try
-	        {
-	            loader.setLocation(getClass().getResource("CompetitionGroup.fxml"));
-	            
-	            AnchorPane newPane1=(AnchorPane) loader.load();
-	            tab1.getChildren().add(newPane1);
-	        }
-	        catch(IOException iex)
-	        {
-	            System.out.println("unable to load tab1");
-	        }
+	@FXML
+	private TextField patronymic;
 
-	        loader = new FXMLLoader();
-	        
-	         try{
-	           AnchorPane anch2 = loader.load(getClass().getResource("Exam.fxml"));
-	            tab2.getChildren().add(anch2);
-	        }
-	        catch(IOException iex)
-	        {
-	            System.out.println("unable to load tab2");
-	        }
+	@FXML
+	private TextField returnDate;
 
-	         try{
-		           AnchorPane anch3 = loader.load(getClass().getResource("Achievements.fxml"));
-		            tab3.getChildren().add(anch3);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch4 = loader.load(getClass().getResource("Priviliges.fxml"));
-		            tab4.getChildren().add(anch4);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch5 = loader.load(getClass().getResource("100_ballov.fxml"));
-		            tab5.getChildren().add(anch5);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch6 = loader.load(getClass().getResource("Education.fxml"));
-		            tab6.getChildren().add(anch6);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch7 = loader.load(getClass().getResource("Address.fxml"));
-		            tab7.getChildren().add(anch7);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch8 = loader.load(getClass().getResource("PassportAndINN.fxml"));
-		            tab8.getChildren().add(anch8);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch9 = loader.load(getClass().getResource("Additional_information.fxml"));
-		            tab9.getChildren().add(anch9);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	    }
-	    
+	@FXML
+	private TextField surname;
+
+	@FXML
+	private TextField name;
+
+	@FXML
+	private TextField id;
+
+	@FXML
+	private Button delete;
+
+	@FXML
+	void clickAddition(ActionEvent event) throws IOException {
+		Stage stage;
+		stage = (Stage) addition.getScene().getWindow();
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAbiturient.fxml"));
+		AnchorPane root1 = (AnchorPane) fxmlLoader.load();
+		stage = new Stage();
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.setScene(new Scene(root1));
+		stage.setResizable(false);
+		stage.show();
+
 	}
-	
-	
+
+	@FXML
+	void clickEdit(ActionEvent event) throws IOException {
+		if ("–Â‰‡ÍÚËÓ‚‡Ú¸".equals(edit.getText())) {
+			id.setEditable(true);
+			name.setEditable(true);
+			surname.setEditable(true);
+			patronymic.setEditable(true);
+			receiveDate.setEditable(true);
+			returnDate.setEditable(true);
+			birthday.setMouseTransparent(false);
+			birthday.setEditable(true);
+			gender.setMouseTransparent(false);
+			gender.setEditable(true);
+			reason.setMouseTransparent(false);
+			reason.setEditable(true);
+			citizenship.setMouseTransparent(false);
+			citizenship.setEditable(true);
+			hostel.setMouseTransparent(false);
+			takeDocs.setMouseTransparent(false);
+			edit.setText("—Óı‡ÌËÚ¸");
+		} else {
+			id.setEditable(false);
+			name.setEditable(false);
+			surname.setEditable(false);
+			patronymic.setEditable(false);
+			receiveDate.setEditable(false);
+			returnDate.setEditable(false);
+			birthday.setMouseTransparent(true);
+			birthday.setEditable(false);
+			gender.setMouseTransparent(true);
+			gender.setEditable(false);
+			reason.setMouseTransparent(true);
+			reason.setEditable(false);
+			citizenship.setMouseTransparent(true);
+			citizenship.setEditable(false);
+			hostel.setMouseTransparent(true);
+			takeDocs.setMouseTransparent(true);
+			edit.setText("–Â‰‡ÍÚËÓ‚‡Ú¸");
+		}
+
+	}
+
+	@FXML
+	void clickDelete(ActionEvent event) throws IOException {
+		Stage stage;
+		stage = (Stage) delete.getScene().getWindow();
+
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteStudent.fxml"));
+		AnchorPane root1 = (AnchorPane) fxmlLoader.load();
+		stage = new Stage();
+		stage.initModality(Modality.APPLICATION_MODAL);
+		// stage.setTitle("–î—Ä—É–≥–∞—è —Ñ–æ—Ä–º–∞");
+		stage.setScene(new Scene(root1));
+		stage.setResizable(false);
+		stage.show();
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// birthday.setValue(LocalDate.now());
+		FXMLLoader loader = new FXMLLoader();
+		try {
+			loader.setLocation(getClass().getResource("CompetitionGroup.fxml"));
+
+			AnchorPane newPane1 = (AnchorPane) loader.load();
+			tab1.getChildren().add(newPane1);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab1");
+		}
+
+		loader = new FXMLLoader();
+
+		try {
+			AnchorPane anch2 = loader.load(getClass().getResource("Exam.fxml"));
+			tab2.getChildren().add(anch2);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab2");
+		}
+
+		try {
+			AnchorPane anch3 = loader.load(getClass().getResource("Achievements.fxml"));
+			tab3.getChildren().add(anch3);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab2");
+		}
+
+		try {
+			AnchorPane anch4 = loader.load(getClass().getResource("Priviliges.fxml"));
+			tab4.getChildren().add(anch4);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab2");
+		}
+
+		try {
+			AnchorPane anch5 = loader.load(getClass().getResource("100_ballov.fxml"));
+			tab5.getChildren().add(anch5);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab2");
+		}
+
+		try {
+			AnchorPane anch6 = loader.load(getClass().getResource("Education.fxml"));
+			tab6.getChildren().add(anch6);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab2");
+		}
+
+		try {
+			AnchorPane anch7 = loader.load(getClass().getResource("Address.fxml"));
+			tab7.getChildren().add(anch7);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab2");
+		}
+
+		try {
+			AnchorPane anch8 = loader.load(getClass().getResource("PassportAndINN.fxml"));
+			tab8.getChildren().add(anch8);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab2");
+		}
+
+		try {
+			AnchorPane anch9 = loader.load(getClass().getResource("Additional_information.fxml"));
+			tab9.getChildren().add(anch9);
+		} catch (IOException iex) {
+			System.out.println("unable to load tab2");
+		}
+	}
+
+}

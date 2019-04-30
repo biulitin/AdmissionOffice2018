@@ -8,7 +8,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="406.0" prefWidth="724.0" stylesheets="@for_background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddCompetitionGroupController">
+
+<AnchorPane prefHeight="406.0" prefWidth="724.0" stylesheets="@for_background.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
    <children>
       <Pane layoutX="172.0" layoutY="73.0" prefHeight="406.0" prefWidth="724.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -38,20 +39,20 @@
                </font>
             </Label>
             <DatePicker layoutX="231.0" layoutY="274.0" prefHeight="25.0" prefWidth="139.0" />
-            <Button fx:id="save" layoutX="586.0" layoutY="342.0" mnemonicParsing="false" onAction="#clickSave" prefHeight="32.0" prefWidth="101.0" text="Сохранить">
+            <Button layoutX="586.0" layoutY="342.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="101.0" text="Сохранить">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Button>
-            <CheckBox layoutX="473.0" layoutY="276.0" mnemonicParsing="false" text="Предоставил оригиналы">
+            <ChoiceBox layoutX="195.0" layoutY="31.0" prefHeight="30.0" prefWidth="492.0" />
+            <ChoiceBox layoutX="216.0" layoutY="93.0" prefHeight="30.0" prefWidth="470.0" />
+            <ChoiceBox layoutX="242.0" layoutY="160.0" prefHeight="30.0" prefWidth="445.0" />
+            <ChoiceBox layoutX="536.0" layoutY="214.0" prefHeight="30.0" prefWidth="150.0" />
+            <JFXCheckBox checkedColor="#2171ae" layoutX="475.0" layoutY="276.0" text="Предоставил оригиналы">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
-            </CheckBox>
-            <ComboBox layoutX="193.0" layoutY="28.0" prefHeight="30.0" prefWidth="492.0" />
-            <ComboBox layoutX="217.0" layoutY="90.0" prefHeight="30.0" prefWidth="470.0" />
-            <ComboBox layoutX="242.0" layoutY="157.0" prefHeight="30.0" prefWidth="445.0" />
-            <ComboBox layoutX="535.0" layoutY="212.0" prefHeight="30.0" prefWidth="150.0" />
+            </JFXCheckBox>
          </children>
       </Pane>
    </children>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -10,18 +14,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="306.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="306.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EducationController">
    <children>
       <ScrollPane prefHeight="341.0" prefViewportHeight="306.0" prefViewportWidth="724.0" prefWidth="1022.0">
          <content>
             <Pane prefHeight="406.0" prefWidth="1030.0">
                <children>
-                  <Button layoutX="597.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
+                  <Button fx:id="edit" layoutX="597.0" layoutY="356.0" mnemonicParsing="false" onAction="#clickEdit" prefHeight="25.0" prefWidth="150.0" text="Редактировать">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="767.0" layoutY="356.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Сохранить">
+                  <Button fx:id="save" disable="true" layoutX="767.0" layoutY="356.0" mnemonicParsing="false" onAction="#clickSave" prefHeight="25.0" prefWidth="150.0" text="Сохранить">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
@@ -36,19 +40,19 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="169.0" layoutY="127.0" prefHeight="25.0" prefWidth="150.0" />
+                  <TextField fx:id="series" editable="false" layoutX="169.0" layoutY="127.0" prefHeight="25.0" prefWidth="150.0" />
                   <Label layoutX="111.0" layoutY="131.0" text="Серия">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="499.0" layoutY="127.0" prefHeight="25.0" prefWidth="150.0" />
+                  <TextField fx:id="number" editable="false" layoutX="499.0" layoutY="127.0" prefHeight="25.0" prefWidth="150.0" />
                   <Label layoutX="440.0" layoutY="129.0" text="Номер">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="210.0" layoutY="234.0" prefHeight="88.0" prefWidth="707.0" />
+                  <TextField fx:id="issuedBy" editable="false" layoutX="210.0" layoutY="234.0" prefHeight="88.0" prefWidth="707.0" />
                   <Label layoutX="111.0" layoutY="234.0" text="Кем выдан">
                      <font>
                         <Font size="14.0" />
@@ -59,9 +63,9 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <DatePicker layoutX="210.0" layoutY="178.0" prefHeight="25.0" prefWidth="150.0" />
-                  <ComboBox layoutX="270.0" layoutY="31.0" prefHeight="25.0" prefWidth="650.0" />
-                  <ComboBox layoutX="270.0" layoutY="67.0" prefHeight="25.0" prefWidth="650.0" />
+                  <DatePicker fx:id="dateOf" editable="false" layoutX="210.0" layoutY="178.0" prefHeight="25.0" prefWidth="150.0" />
+                  <ComboBox fx:id="educLevel" layoutX="270.0" layoutY="31.0" prefHeight="25.0" prefWidth="650.0" />
+                  <ComboBox fx:id="typeOfEduc" layoutX="270.0" layoutY="67.0" prefHeight="25.0" prefWidth="650.0" />
                </children>
             </Pane>
          </content>

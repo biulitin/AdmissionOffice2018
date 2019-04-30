@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="406.0" prefWidth="724.0" stylesheets="@for_background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane prefHeight="406.0" prefWidth="724.0" stylesheets="@for_background.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
    <children>
       <Pane layoutX="179.0" layoutY="77.0" prefHeight="406.0" prefWidth="724.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -48,11 +49,11 @@
                </font>
             </Label>
             <DatePicker layoutX="451.0" layoutY="217.0" prefHeight="25.0" prefWidth="133.0" />
-            <CheckBox layoutX="491.0" layoutY="101.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="221.0" text="Нуждается в общежитии">
+            <JFXCheckBox checkedColor="#2a5add" layoutX="491.0" layoutY="106.0" text="Нуждается в общежитии">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
-            </CheckBox>
+            </JFXCheckBox>
             <TextField layoutX="103.0" layoutY="33.0" prefHeight="26.0" prefWidth="199.0">
                <font>
                   <Font name="Arial" size="14.0" />
@@ -97,12 +98,12 @@
             </Label>
             <ChoiceBox layoutX="180.0" layoutY="295.0" prefHeight="25.0" prefWidth="488.0" />
             <DatePicker layoutX="238.0" layoutY="335.0" prefHeight="25.0" prefWidth="150.0" />
-            <Button layoutX="610.0" layoutY="368.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" text="Добавить" />
-            <CheckBox layoutX="491.0" layoutY="334.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="221.0" text="Забрал документы">
+            <JFXCheckBox checkedColor="#2a5add" layoutX="491.0" layoutY="338.0" text="Забрал документы">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
-            </CheckBox>
+            </JFXCheckBox>
+            <Button layoutX="610.0" layoutY="368.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" text="Добавить" />
          </children>
       </Pane>
    </children>
