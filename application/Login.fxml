@@ -20,8 +20,8 @@
             </BorderPane>
             <Pane prefHeight="300.0" prefWidth="600.0">
                <children>
-                  <TextField layoutX="172.0" layoutY="43.0" prefHeight="34.0" prefWidth="257.0" />
-                  <PasswordField layoutX="172.0" layoutY="105.0" prefHeight="34.0" prefWidth="257.0" />
+                  <TextField fx:id="login" layoutX="172.0" layoutY="43.0" prefHeight="34.0" prefWidth="257.0" />
+                  <PasswordField fx:id="passwd" layoutX="172.0" layoutY="105.0" prefHeight="34.0" prefWidth="257.0" />
                   <Label layoutX="85.0" layoutY="50.0" text="Логин:">
                      <font>
                         <Font name="Arial Italic" size="18.0" />

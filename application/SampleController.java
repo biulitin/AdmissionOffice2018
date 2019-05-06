@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+
+import org.grios.tableadapter.DefaultTableAdapter;
+
+import backend.ModelDBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +17,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import static javafx.scene.input.DataFormat.URL;
 
@@ -97,6 +103,10 @@ public class SampleController implements Initializable {
 
 	@FXML
 	private Button delete;
+	
+    @FXML
+    private TableView tableWithAbiturients;
+    private DefaultTableAdapter dta;
 
 	@FXML
 	void clickAddition(ActionEvent event) throws IOException {
@@ -171,6 +181,9 @@ public class SampleController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		initTableWithAbiturients();
+		
+		
 		// birthday.setValue(LocalDate.now());
 		FXMLLoader loader = new FXMLLoader();
 		try {
@@ -239,6 +252,21 @@ public class SampleController implements Initializable {
 		} catch (IOException iex) {
 			System.out.println("unable to load tab2");
 		}
+	}
+	
+	public void initTableWithAbiturients() {
+		String[] columns = {"№Л/д", "Фамилия", "Имя", "Отчество"};
+		String[][] data = ModelDBConnection.getAllAbiturients();
+		dta = new DefaultTableAdapter(tableWithAbiturients, data, columns);
+		
+		/*tableWithAbiturients.setRowFactory(table -> {
+            final TableRow row = new TableRow();
+            row.setOnMousePressed(event -> {
+                if(row != null)
+                	System.out.println(tableWithAbiturients.getSelectionModel().getSelectedIndex());
+            });
+            return row;
+        });*/
 	}
 
 }

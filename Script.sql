@@ -274,6 +274,9 @@ create table AbiturientCompetitiveGroups(
      competitiveScore int, --Конкурсный_балл
      sumOfIndividAchievmentScores int, --Сумма баллов за_индивидуальные_достижения
      is_enrolled int, --Отметка_о_зачислении
+	 priority int,	--Приоритет (определяет порядок отображения в таблице)
+	 originalsReceivedDate Date, --Дата предоставлениz оригинала
+	 agreementReceivedDate Date, --Дата предоставления согласия на зачисление
 	 
 --Внешние ключи
     foreign key(id_abiturient) references Abiturient(aid) on update cascade, --идентификатор абитуриента
@@ -334,7 +337,7 @@ create table AbiturientDocumentBVI(
 --Тип Квоты
 create table TypeOfQuote(
 	id int primary key, --идентификатор
-	nameOfQuote text, --Наименование
+	name text, --Наименование
 	codeFIS text --Код_ФИС
 );
 
@@ -365,7 +368,7 @@ create table AbiturientDocQuote(
 --Тип ПП 
 create table TypeOfPrefRight(
 	id int primary key, --идентификатор
-	nameOfQuote text, --Наименование
+	name text, --Наименование
 	codeFIS text --Код_ФИС
 );
 
@@ -396,7 +399,7 @@ create table AbiturientDocPrefRight(
 --Категория_допсведений
 create table AdditionalInfCategory(
 	id int primary key, --идентификатор
-	nameOfQuote text, --Наименование
+	name text, --Наименование
 	codeFIS text --Код_ФИС
 );
 
