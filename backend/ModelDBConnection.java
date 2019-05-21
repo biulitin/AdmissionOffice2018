@@ -1,4 +1,4 @@
-﻿package backend;
+package backend;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -62,13 +62,16 @@ public class ModelDBConnection {
 	public static boolean initConnection() {
 		if (con == null) {
 			try {
-				String connectionUrl = "jdbc:postgresql://" + serverAddress 
-						+ "/" + dbName;
+				String connectionUrl = "jdbc:postgresql://localhost:5433/postgres";
+                                serverAddress = "localhost:5433";
+                                dbName = "postgres";
+                                        //"jdbc:postgresql://" + serverAddress 
+					//	+ "/" + dbName;
 
 				props = new Properties();
 				props.setProperty("user", login);
 				props.setProperty("password", password);
-				con = DriverManager.getConnection(connectionUrl, props);
+				con = DriverManager.getConnection(connectionUrl,"user","password"); //props);
 			} catch (Exception e) {
 				e.printStackTrace();
 				return false;
@@ -174,6 +177,7 @@ public class ModelDBConnection {
 	}
 
 	//Получает основную информацию по абитуриенту (для окна основной информации)
+         
 	public static String[] getAbiturientGeneralInfoByID(String aid) throws SQLException {
 		try {
 			cstmt = con.prepareCall("{call getAbiturientGeneralInfoByID(?)}", 1004, 1007);
@@ -189,9 +193,12 @@ public class ModelDBConnection {
 			for (int i = 0; i < result.length; i++)
 				result[i] = "";
 			result[0] = aid;
-
+                        System.out.println(result[0]);
+                        //System.out.println(rset.getR);
+                        
+ 
 			while (rset.next()) {
-				for (int i = 0; i < numberOfColumns; i++) {
+				for (int i = 1; i < numberOfColumns; i++) {
 					if (rset.getObject(i + 1) != null)
 						if (rset.getObject(i + 1) instanceof Date) {
 							SimpleDateFormat format = new SimpleDateFormat();
@@ -213,15 +220,16 @@ public class ModelDBConnection {
 
 	//Добавление абитуриента по всем полям (16) или по отдельному набору (10)
 	//!!! НЕ ТЕСТИРОВАЛАСЬ - ПРОВЕРИТЬ КОРРЕКТНОСТЬ РАБОТЫ
+        //были внесены изменения, обеспечивающие полное соответствие полей таблицы Абитуриент с полями, указанными в данной функции
 	public static void insertAbiturient(String[] info) throws SQLException {
-		String aid, SName, FName, MName, birthday, birthplace, id_gender, id_nationality, email, phoneNumbers,
-				needHostel, registrationDate, returnDate, id_returnReason, needSpecConditions, is_enrolled, snils;
+		String aid, SName, FName, MName, birthday, birthplace, id_gender, id_nationality, email, phoneNumbers,inn,
+				needHostel, registrationDate, returnDate, id_returnReason, needSpecConditions, is_enrolled;//, snils;
 		String query;
 
-		query = aid = SName = FName = MName = birthday = birthplace = id_gender = id_nationality = email = phoneNumbers = needHostel = registrationDate = returnDate = id_returnReason = needSpecConditions = is_enrolled = snils = null;
+		query = aid = SName = FName = MName = birthday = birthplace = id_gender = id_nationality = email = phoneNumbers = needHostel = registrationDate = returnDate = id_returnReason = needSpecConditions = is_enrolled = inn = null;
 
 		switch (info.length) {
-		case 16:
+		case 17:
 			aid = info[0];
 			SName = "'" + info[1] + "'";
 			FName = "'" + info[2] + "'";
@@ -232,41 +240,49 @@ public class ModelDBConnection {
 			id_nationality = info[7];
 			email = "'" + info[8] + "'";
 			phoneNumbers = "'" + info[9] + "'";
-			needHostel = info[10];
-			registrationDate = "'" + info[11] + "'";
-			returnDate = "'" + info[12] + "'";
-			id_returnReason = info[13];
-			needSpecConditions = info[14];
-			is_enrolled = info[15];
+                        inn = "'" + info[10] + "'";
+			needHostel = info[11];
+			registrationDate = "'" + info[12] + "'";
+			returnDate = "'" + info[13] + "'";
+			id_returnReason = info[14];
+			needSpecConditions = info[15];
+			is_enrolled = info[16];
 
-			query = "insert into Abiturient (aid, SName, FName, MName, Birthday, birthplace, id_gender, id_nationality, email, phoneNumbers, needHostel, registrationDate, returnDate, id_returnReason, needSpecConditions, is_enrolled) Values (" 
+			query = "insert into Abiturient (aid, SName, FName, MName, Birthday, Birthplace, id_gender, id_nationality, email, phoneNumbers, inn,needHostel, registrationDate, returnDate, id_returnReason, needSpecConditions, is_enrolled) Values (" 
 					+ aid + ", " + SName + ", " + FName + ", " + MName + ", "
 					+ birthday + ", " + birthplace + ", " + id_gender + ", " + id_nationality + ", " + email + ", "
-					+ phoneNumbers + ", " + needHostel + ", " + registrationDate + ", " + returnDate + ", "
+					+ phoneNumbers + ", " + inn +", " + needHostel + ", " + registrationDate + ", " + returnDate + ", "
 					+ id_returnReason + ", " + needSpecConditions + ", " + is_enrolled + ");";
 
 			break;
-		case 10:
+		case 12:
+                    //System.out.println("this branch");
 			aid = info[0];
 			SName = "'" + info[1] + "'";
 			FName = "'" + info[2] + "'";
 			MName = "'" + info[3] + "'";
 			birthday = "'" + info[4] + "'";
+                        //birthplace = "'" + info[5] + "'";
 			id_gender = info[5];
 			id_nationality = info[6];
-			registrationDate = "'" + info[7] + "'";
-			needHostel = "'" + info[8] + "'";
-			snils = "'" + info[9] + "'";
+                        needHostel =  info[7] ;
+			registrationDate = "'" + info[8] + "'";
+                        returnDate = "'" + info[9] + "'";
+                        id_returnReason = info[10];
+			 
+			is_enrolled = info[11];
 
-			query = "insert into Abiturient (aid, SName, FName, MName, Birthday, id_gender, id_nationality, registrationDate, needHostel, inn) Values ("
-					+ aid + ", " + SName + ", " + FName + ", " + MName + ", " + birthday + ", " + id_gender + ", "
-					+ id_nationality + ", " + registrationDate + ", " + needHostel + ", " + snils + ");";
+			query = "insert into Abiturient (aid, SName, FName, MName, Birthday, id_gender, id_nationality, needHostel, registrationDate, returnDate, id_returnReason, is_enrolled) Values ("
+					+ aid + ", " + SName + ", " + FName + ", " + MName + ", " + birthday + ", " 
+                                + id_gender + ", "+ id_nationality + ", " + needHostel + ", "  + registrationDate + ", " 
+                                +returnDate + ", " + id_returnReason + ", " + is_enrolled + ");";
 
 			break;
 		}
 
 		if (initConnection()) {
-			query = query.replaceAll("'null'", "null");
+			query = query.replaceAll("null", "'null'");
+                                 
 			stmt = con.createStatement();
 			stmt.executeUpdate(query);
 
@@ -311,6 +327,7 @@ public class ModelDBConnection {
 					+ needSpecConditions + ", is_enrolled = " + is_enrolled + " where aid = " + aid + ";";
 
 			break;
+                
 		case 8:
 			aid = info[0];
 			SName = "'" + info[1] + "'";
@@ -326,26 +343,30 @@ public class ModelDBConnection {
 					+ ", registrationDate = " + registrationDate + " where aid = " + aid + ";";
 
 			break;
-		case 11:
-			aid = info[0];
+		case 12:
+                    aid = info[0];
 			SName = "'" + info[1] + "'";
 			FName = "'" + info[2] + "'";
 			MName = "'" + info[3] + "'";
 			birthday = "'" + info[4] + "'";
+                        //birthplace = "'" + info[5] + "'";
 			id_gender = info[5];
 			id_nationality = info[6];
-			registrationDate = "'" + info[7] + "'";
-			returnDate = info[8] == null ? null : "'" + info[8] + "'";
-			id_returnReason = info[9];
-			snils = "'" + info[10] + "'";
-			
-			query = "update Abiturient set SName = " + SName + ", FName = " + FName + ", MName = " + MName
-					+ ", Birthday = " + birthday + ", id_gender = " + id_gender + ", id_nationality = " + id_nationality
-					+ ", registrationDate = " + registrationDate + ", returnDate = " + returnDate
-					+ ", id_returnReason = " + id_returnReason + ", inn = " + snils + " where aid = " + aid + ";";
-			query = query.replaceAll("'null'", "null");
-			System.out.println(query);
+                        needHostel =  info[7] ;
+			registrationDate = "'" + info[8] + "'";
+                        returnDate = "'" + info[9] + "'";
+                        id_returnReason = info[10];
+			 
+			is_enrolled = info[11];
+
+			query = "update Abiturient set SName = " + SName + ", " + FName + ", " + MName + ", " + birthday + ", " 
+                                + id_gender + ", "+ id_nationality + ", " + needHostel + ", "  + registrationDate + ", " 
+                                +returnDate + ", " + id_returnReason + ", " + is_enrolled + " where aid = " + aid + ");";
+
 			break;
+			 
+			
+			 
 		}
 
 		if (initConnection()) {
@@ -1253,13 +1274,10 @@ public class ModelDBConnection {
 			try {
 				int freeNumber = 0;
 				cstmt = con.prepareCall("{? = call getFreeNumberInGroup(?,?)}");
-
 				cstmt.registerOutParameter(1, Types.INTEGER);
 				cstmt.setString(2, idEntranceTest);
 				cstmt.setString(3, testGroup);
-
 				cstmt.execute();
-
 				freeNumber = cstmt.getInt(1);
 				// System.out.println(count);
 				return freeNumber;
@@ -1271,21 +1289,15 @@ public class ModelDBConnection {
 				return -1;
 			}
 		}
-
 		return -1;
 	}
-
 	public static String[][] getAdmissionPlan() {
 		String[][] data = null;
-
 		try {
 			cstmt = con.prepareCall("{call getAdmissionPlan()}", 1004, 1007);
-
 			rset = cstmt.executeQuery();
-
 			int countStrings = rset.last() ? rset.getRow() : 0;
 			rset.beforeFirst();
-
 			if (countStrings > 0) {
 				ResultSetMetaData rsmd = rset.getMetaData();
 				int numberOfColumns = rsmd.getColumnCount();
@@ -1301,7 +1313,6 @@ public class ModelDBConnection {
 			}
 			cstmt.close();
 			rset.close();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -1336,10 +1347,8 @@ public class ModelDBConnection {
 	/*public static void updateCompetitiveBallsByID(String aid) throws SQLException {
 		if (initConnection()) {
 			cstmt = con.prepareCall("{call updateCompetitiveBallsByID(?)}");
-
 			cstmt.setString(1, aid);
 			cstmt.execute();
-
 			cstmt.close();
 		}
 	}*/
@@ -1357,5 +1366,6 @@ public class ModelDBConnection {
 		System.out.println(getAbiturientGeneralInfoByID("1"));
 		System.out.println(getNamesFromTableOrderedById("gender"));
 		getAllFromTableOrderedById("gender");
-	}
 }
+}
+     
