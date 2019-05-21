@@ -5,8 +5,11 @@
  */
 package application;
 
+import backend.ModelDBConnection;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,7 +26,8 @@ public class DeleteStudentController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
+ 
+    public static boolean delete = false;
     @FXML
     private Button no;
     
@@ -31,8 +35,15 @@ public class DeleteStudentController implements Initializable {
     private Button yes;
 
     @FXML
-    void clickYes(ActionEvent event) {
-Stage stage =  (Stage)no.getScene().getWindow();
+    void clickYes(ActionEvent event) throws SQLException {
+       // ModelDBConnection.deleteAbiturient(SampleController.getSelectedIndex());
+      //  SampleController.getTableWithAbiturients().getItems().removeAll(SampleController.getSelectedRow());
+        //SampleController.getSelectedRow();
+        //ObservableList items = SampleController.tableWithAbiturients.getItems();
+       // ModelDBConnection.deleteAbiturient(SampleController.getTableWithAbiturients().getSelectionModel().getSelectedCells().get(0).toString());//  getSelectedIndex());
+                //SampleController.getTableWithAbiturients().getItems().);
+                delete = true;
+Stage stage =  (Stage)yes.getScene().getWindow();
                  
         stage.close();
     }
@@ -46,6 +57,7 @@ Stage stage =  (Stage)no.getScene().getWindow();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+            
     }    
     
 }

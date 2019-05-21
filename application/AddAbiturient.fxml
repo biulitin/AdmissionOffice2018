@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="406.0" prefWidth="724.0" stylesheets="@for_background.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="724.0" stylesheets="@for_background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddAbiturientController">
    <children>
       <Pane layoutX="179.0" layoutY="77.0" prefHeight="406.0" prefWidth="724.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -37,7 +36,7 @@
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="369.0" layoutY="102.0" prefHeight="25.0" prefWidth="104.0" />
+            <ComboBox fx:id="gender" layoutX="369.0" layoutY="102.0" prefHeight="25.0" prefWidth="104.0" />
             <Label layoutX="331.0" layoutY="104.0" text="Пол">
                <font>
                   <Font name="Arial" size="16.0" />
@@ -48,39 +47,39 @@
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <DatePicker layoutX="451.0" layoutY="217.0" prefHeight="25.0" prefWidth="133.0" />
-            <JFXCheckBox checkedColor="#2a5add" layoutX="491.0" layoutY="106.0" text="Нуждается в общежитии">
+            <DatePicker fx:id="birthday" layoutX="451.0" layoutY="217.0" prefHeight="25.0" prefWidth="133.0" />
+            <CheckBox fx:id="hostel" layoutX="491.0" layoutY="106.0" text="Нуждается в общежитии">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
-            </JFXCheckBox>
-            <TextField layoutX="103.0" layoutY="33.0" prefHeight="26.0" prefWidth="199.0">
+            </CheckBox>
+            <TextField fx:id="id" layoutX="103.0" layoutY="33.0" prefHeight="26.0" prefWidth="199.0">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <TextField layoutX="103.0" layoutY="216.0" prefHeight="26.0" prefWidth="199.0">
+            <TextField fx:id="patronymic" layoutX="103.0" layoutY="216.0" prefHeight="26.0" prefWidth="199.0">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <TextField layoutX="103.0" layoutY="164.0" prefHeight="26.0" prefWidth="199.0">
+            <TextField fx:id="name" layoutX="103.0" layoutY="164.0" prefHeight="26.0" prefWidth="199.0">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <TextField layoutX="103.0" layoutY="103.0" prefHeight="26.0" prefWidth="199.0">
+            <TextField fx:id="surname" layoutX="103.0" layoutY="103.0" prefHeight="26.0" prefWidth="199.0">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <DatePicker layoutX="527.0" layoutY="34.0" prefHeight="25.0" prefWidth="139.0" />
+            <DatePicker fx:id="receiveDate" layoutX="527.0" layoutY="34.0" prefHeight="25.0" prefWidth="139.0" />
             <Label layoutX="331.0" layoutY="167.0" text="Гражданство">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="451.0" layoutY="165.0" prefHeight="25.0" prefWidth="133.0" />
+            <ComboBox fx:id="citizenship" layoutX="451.0" layoutY="165.0" prefHeight="25.0" prefWidth="133.0" />
             <Label layoutX="229.0" layoutY="263.0" text=" Сведения о возврате документов">
                <font>
                   <Font name="Arial Italic" size="16.0" />
@@ -96,15 +95,16 @@
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="180.0" layoutY="295.0" prefHeight="25.0" prefWidth="488.0" />
-            <DatePicker layoutX="238.0" layoutY="335.0" prefHeight="25.0" prefWidth="150.0" />
-            <JFXCheckBox checkedColor="#2a5add" layoutX="491.0" layoutY="338.0" text="Забрал документы">
+            <ComboBox fx:id="reason" layoutX="180.0" layoutY="295.0" prefHeight="25.0" prefWidth="488.0" />
+            <DatePicker fx:id="returnDate" layoutX="238.0" layoutY="335.0" prefHeight="25.0" prefWidth="150.0" />
+            <Button fx:id="add" layoutX="610.0" layoutY="368.0" mnemonicParsing="false" onAction="#clickAdd" prefHeight="26.0" prefWidth="97.0" text="Добавить" />
+            <ComboBox fx:id="is_enrolled" layoutX="522.0" layoutY="335.0" prefHeight="25.0" prefWidth="187.0" />
+            <Label layoutX="429.0" layoutY="337.0" text="Зачисление">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
-            </JFXCheckBox>
-            <Button layoutX="610.0" layoutY="368.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" text="Добавить" />
+            </Label>
          </children>
       </Pane>
-   </children>
+</children> 
 </AnchorPane>

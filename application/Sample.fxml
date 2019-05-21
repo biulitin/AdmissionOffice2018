@@ -119,6 +119,9 @@
                                     <TableColumn editable="false" minWidth="0.0" prefWidth="60.0" sortable="false" text="Имя" />
                                     <TableColumn editable="false" prefWidth="94.0" sortable="false" text="Отчество" />
                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
                               </TableView>
                               <Button fx:id="addition" layoutX="14.0" layoutY="676.0" mnemonicParsing="false" onAction="#clickAddition" prefHeight="25.0" prefWidth="80.0" text="Добавить" textAlignment="CENTER" />
                               <Button fx:id="edit" layoutX="110.0" layoutY="676.0" mnemonicParsing="false" onAction="#clickEdit" prefHeight="25.0" prefWidth="105.0" text="Редактировать" textAlignment="CENTER" />
@@ -188,7 +191,6 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="receiveDate" editable="false" layoutX="474.0" layoutY="8.0" prefHeight="27.0" prefWidth="176.0" />
                                           <Label layoutX="17.0" layoutY="44.0" text="Фамилия">
                                              <font>
                                                 <Font size="14.0" />
@@ -230,6 +232,7 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </CheckBox>
+                                          <DatePicker fx:id="receiveDate" editable="false" layoutX="475.0" layoutY="8.0" mouseTransparent="true" prefHeight="20.0" prefWidth="180.0" />
                                        </children>
                                     </AnchorPane>
                                 </content>
@@ -252,12 +255,13 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="returnDate" editable="false" layoutX="187.0" layoutY="54.0" prefHeight="27.0" prefWidth="197.0" />
-                                          <CheckBox fx:id="takeDocs" layoutX="732.0" layoutY="58.0" mnemonicParsing="false" mouseTransparent="true" text="Забрал(а) документы">
+                                          <Label layoutX="706.0" layoutY="56.0" text="Зачисление">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
-                                          </CheckBox>
+                                          </Label>
+                                          <ChoiceBox fx:id="is_enrolled" layoutX="796.0" layoutY="55.0" mouseTransparent="true" prefHeight="27.0" prefWidth="208.0" />
+                                          <DatePicker fx:id="returnDate" editable="false" layoutX="188.0" layoutY="55.0" mouseTransparent="true" />
                                        </children>
                                     </AnchorPane>
                                  </content>
