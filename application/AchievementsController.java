@@ -25,7 +25,6 @@ public class AchievementsController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
     @FXML
     private Button add;
 
@@ -43,7 +42,7 @@ public class AchievementsController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> name;
- 
+
     @FXML
     private TableView<?> table;
 
@@ -54,26 +53,27 @@ public class AchievementsController implements Initializable {
 
     @FXML
     void clickEdit(ActionEvent event) {
-add.setDisable(false);
-save.setDisable(false);
-table.setEditable(true);
-name.setEditable(true);
-document.setEditable(true);
-score.setEditable(true);
+        add.setDisable(false);
+        save.setDisable(false);
+        table.setEditable(true);
+        name.setEditable(true);
+        document.setEditable(true);
+        score.setEditable(true);
     }
 
     @FXML
     void clickSave(ActionEvent event) {
-add.setDisable(true);
-save.setDisable(true);
-table.setEditable(false);
-name.setEditable(false);
-document.setEditable(false);
-score.setEditable(false);
+        add.setDisable(true);
+        save.setDisable(true);
+        table.setEditable(false);
+        name.setEditable(false);
+        document.setEditable(false);
+        score.setEditable(false);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

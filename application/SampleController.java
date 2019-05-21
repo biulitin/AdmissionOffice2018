@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TableRow;
 import static javafx.scene.input.DataFormat.URL;
- 
+
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -41,43 +41,42 @@ import javafx.stage.WindowEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class SampleController implements Initializable{
-	
-	
-	 @FXML
-	    private BorderPane border1;
+public class SampleController implements Initializable {
 
-	    @FXML
-	    private AnchorPane tab1;
+    @FXML
+    private BorderPane border1;
 
-	    @FXML
-	    private AnchorPane tab2;
-	    
-	    @FXML
-	    private AnchorPane tab3;
+    @FXML
+    private AnchorPane tab1;
 
-	    @FXML
-	    private AnchorPane tab4;
-	    
-	    @FXML
-	    private AnchorPane tab5;
-	    
-	    @FXML
-	    private AnchorPane tab6;
-	    
-	    @FXML
-	    private AnchorPane tab7;
-	    
-	    @FXML
-	    private AnchorPane tab8;
-	    
-	    @FXML
-	    private AnchorPane tab9;
-            
-            @FXML
-            private Button addition;
-            
-            @FXML
+    @FXML
+    private AnchorPane tab2;
+
+    @FXML
+    private AnchorPane tab3;
+
+    @FXML
+    private AnchorPane tab4;
+
+    @FXML
+    private AnchorPane tab5;
+
+    @FXML
+    private AnchorPane tab6;
+
+    @FXML
+    private AnchorPane tab7;
+
+    @FXML
+    private AnchorPane tab8;
+
+    @FXML
+    private AnchorPane tab9;
+
+    @FXML
+    private Button addition;
+
+    @FXML
     private DatePicker birthday;
 
     @FXML
@@ -91,23 +90,22 @@ public class SampleController implements Initializable{
 
     @FXML
     private CheckBox hostel;
-    
-     @FXML
+
+    @FXML
     private ComboBox<String> citizenship;
-     
-      @FXML
+
+    @FXML
     private DatePicker receiveDate;
 
-
-        @FXML
+    @FXML
     private ChoiceBox<String> is_enrolled;
-    
+
     @FXML
     private TextField patronymic;
 
-     @FXML
+    @FXML
     private DatePicker returnDate;
-    
+
     @FXML
     private TextField surname;
 
@@ -116,107 +114,135 @@ public class SampleController implements Initializable{
 
     @FXML
     private TextField id;
-    
+
     @FXML
     private Button delete;
-    
+
     @FXML
-    public  TableView tableWithAbiturients;
+    public TableView tableWithAbiturients;
     private DefaultTableAdapter dta;
 
+    @FXML
+    void clickAddition(ActionEvent event) throws IOException {
+        //Stage stage;
+        //stage = (Stage)addition.getScene().getWindow();
+        // do what you have to do
+        // stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAbiturient.fxml"));
+        AnchorPane root1 = (AnchorPane) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        //stage.setTitle("Другая форма");
+        stage.setScene(new Scene(root1));
+        stage.setResizable(false);
+        //stage.setMaximized(true);
+        stage.show();
 
+        stage.setOnHidden(new EventHandler<WindowEvent>() {
 
+            @Override
 
-            @FXML
-            void clickAddition(ActionEvent event) throws IOException{
-                //Stage stage;
-                //stage = (Stage)addition.getScene().getWindow();
-                // do what you have to do
-               // stage.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddAbiturient.fxml"));
-                AnchorPane root1 = (AnchorPane) fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
-                //stage.setTitle("Другая форма");
-                stage.setScene(new Scene(root1));
-                stage.setResizable(false);
-                //stage.setMaximized(true);
-                stage.show();
-                 
-                stage.setOnHidden(new EventHandler<WindowEvent>(){
- 
-        @Override
- 
-         public void handle(WindowEvent event) {
- 
-           initTableWithAbiturients();
- 
-         }
- 
-        });
- 
-                //if(!stage.isShowing())
-                   // initTableWithAbiturients();
-                 
-                 
-                 
+            public void handle(WindowEvent event) {
+
+                initTableWithAbiturients();
 
             }
-            
-            @FXML
-            void clickEdit(ActionEvent event)throws IOException {
-                if ("Редактировать".equals(edit.getText())) {
-                id.setEditable(true);
-                 name.setEditable(true);
-                  surname.setEditable(true);
-                  patronymic.setEditable(true);
-                   receiveDate.setEditable(true);
-                   receiveDate.setMouseTransparent(false);
-                    returnDate.setEditable(true);
-                    returnDate.setMouseTransparent(false);
-                    birthday.setMouseTransparent(false);  
-                    birthday.setEditable(true);
-                    gender.setMouseTransparent(false);  
-                    gender.setEditable(true);
-                    reason.setMouseTransparent(false);  
-                    reason.setEditable(true);
-                    citizenship.setMouseTransparent(false);  
-                    citizenship.setEditable(true);
-                    hostel.setMouseTransparent(false);
-                    is_enrolled.setMouseTransparent(false);
-                 edit.setText("Сохранить");}
-                else {
-                    id.setEditable(false);
-                 name.setEditable(false);
-                  surname.setEditable(false);
-                  patronymic.setEditable(false);
-                   receiveDate.setEditable(false);
-                   receiveDate.setMouseTransparent(true);  
-                    returnDate.setEditable(false);
-                    returnDate.setMouseTransparent(true); 
-                    birthday.setMouseTransparent(true);  
-                    birthday.setEditable(false);
-                    gender.setMouseTransparent(true);  
-                    gender.setEditable(false);
-                    reason.setMouseTransparent(true);  
-                    reason.setEditable(false);
-                    citizenship.setMouseTransparent(true);  
-                    citizenship.setEditable(false);
-                    hostel.setMouseTransparent(true);
-                    is_enrolled.setMouseTransparent(true);
-                 edit.setText("Редактировать");
-                }
 
+        });
+
+        //if(!stage.isShowing())
+        // initTableWithAbiturients();
+    }
+
+    @FXML
+    void clickEdit(ActionEvent event) throws IOException, SQLException {
+        if ("Редактировать".equals(edit.getText())) {
+            id.setEditable(true);
+            name.setEditable(true);
+            surname.setEditable(true);
+            patronymic.setEditable(true);
+            receiveDate.setEditable(true);
+            receiveDate.setMouseTransparent(false);
+            returnDate.setEditable(true);
+            returnDate.setMouseTransparent(false);
+            birthday.setMouseTransparent(false);
+            birthday.setEditable(true);
+            gender.setMouseTransparent(false);
+            gender.setEditable(true);
+            reason.setMouseTransparent(false);
+            reason.setEditable(true);
+            citizenship.setMouseTransparent(false);
+            citizenship.setEditable(true);
+            hostel.setMouseTransparent(false);
+            is_enrolled.setMouseTransparent(false);
+            edit.setText("Сохранить");
+        } else {
+            id.setEditable(false);
+            name.setEditable(false);
+            surname.setEditable(false);
+            patronymic.setEditable(false);
+            receiveDate.setEditable(false);
+            receiveDate.setMouseTransparent(true);
+            returnDate.setEditable(false);
+            returnDate.setMouseTransparent(true);
+            birthday.setMouseTransparent(true);
+            birthday.setEditable(false);
+            gender.setMouseTransparent(true);
+            gender.setEditable(false);
+            reason.setMouseTransparent(true);
+            reason.setEditable(false);
+            citizenship.setMouseTransparent(true);
+            citizenship.setEditable(false);
+            hostel.setMouseTransparent(true);
+            is_enrolled.setMouseTransparent(true);
+            edit.setText("Редактировать");
+
+            String[] info = new String[12];
+            info[0] = id.getText();
+            info[1] = surname.getText();
+            info[2] = name.getText();
+            info[3] = patronymic.getText();
+            info[4] = birthday.getValue().toString();
+
+            info[5] = gender.getSelectionModel().getSelectedIndex() + 1 + "";//gender.getValue().toString();
+            info[6] = citizenship.getSelectionModel().getSelectedIndex() + 1 + ""; //citizenship.getValue().toString();
+            int hos = hostel.isSelected() ? 1 : 0;
+            info[7] = hos + "";
+            info[8] = receiveDate.getValue().toString();
+            info[9] = returnDate.getValue().toString();
+            info[10] = reason.getSelectionModel().getSelectedIndex() + 1 + "";//reason.getValue().toString();
+            switch (is_enrolled.getSelectionModel().getSelectedItem()) {
+                case "Зачислен на 0 этапе":
+                    info[11] = "0";
+                    break;
+                case "Зачислен в 1 волну":
+                    info[11] = "1";
+                    break;
+                case "Зачислен во 2 волну":
+                    info[11] = "2";
+                    break;
+                case "Зачислен в волну коммерции":
+                    info[11] = "3";
+                    break;
+                case "Не зачислен":
+                    info[11] = "-1";
+                    break;
+                case "Нет информации":
+                    info[11] = "";
+                    break;
+
+            }
+            ModelDBConnection.editAbiturient(info);
+            initTableWithAbiturients();
+
+        }
 
     }
 
- 
-             @FXML
-    void clickDelete(ActionEvent event) {
-        
-        
-                
-                /*Stage stage;
+    @FXML
+    void clickDelete(ActionEvent event) throws SQLException {
+
+        /*Stage stage;
                 stage = (Stage)delete.getScene().getWindow();
                 // do what you have to do
                // stage.close();
@@ -229,7 +255,7 @@ public class SampleController implements Initializable{
                 stage.setResizable(false);
                 //stage.setMaximized(true);
                 stage.show();*/
-               /* TablePosition pos = (TablePosition) tableWithAbiturients.getSelectionModel().getSelectedCells().get(0);
+ /* TablePosition pos = (TablePosition) tableWithAbiturients.getSelectionModel().getSelectedCells().get(0);
                 System.out.println(pos);
                 int row = pos.getRow();
                 System.out.println(row);
@@ -238,28 +264,40 @@ public class SampleController implements Initializable{
                System.out.println(item);
                item = item.substring(1,item.indexOf(","));
                System.out.println(item);*/
-             // TableColumn col = pos.getTableColumn();
-              //System.out.println(tableWithAbiturients.get);
-              
-              
-                  //getTableView().getItems().get(0));//  .getSelectedItem().toString());
-                int result = MessageProcessing.displayDialogMessage(new JPanel(), 1);
-                if (result == JOptionPane.YES_OPTION){
-                     
-                    //System.out.println(dta.getValueAt( tableWithAbiturients.getSelectionModel().getSelectedIndex()  , 0));
-                    //dta.removeRow( selectedRow );
-                    //System.out.println(col.getCellObservableValue(item).getValue() );
-                     //  getSelectedIndex());
-                    try {
-                        ModelDBConnection.deleteAbiturient(dta.getValueAt( tableWithAbiturients.getSelectionModel().getSelectedIndex()  , 0).toString());
-                         
-                    } catch (SQLException ex) {
-                        Logger.getLogger(SampleController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+        // TableColumn col = pos.getTableColumn();
+        //System.out.println(tableWithAbiturients.get);
+        //getTableView().getItems().get(0));//  .getSelectedItem().toString());
+        int result = MessageProcessing.displayDialogMessage(new JPanel(), 1);
+        if (result == JOptionPane.YES_OPTION) {
+
+            //System.out.println(dta.getValueAt( tableWithAbiturients.getSelectionModel().getSelectedIndex()  , 0));
+            //dta.removeRow( selectedRow );
+            //System.out.println(col.getCellObservableValue(item).getValue() );
+            //  getSelectedIndex());
+            final int selectedIndex = tableWithAbiturients.getSelectionModel().getSelectedIndex();
+            try {
+
+                ModelDBConnection.deleteAbiturient(dta.getValueAt(selectedIndex, 0).toString());
+                if (ModelDBConnection.getCount("Abiturient") > 0) {
+                    System.out.println(ModelDBConnection.getCount("Abiturient"));
                     initTableWithAbiturients();
+                } else {
+                    tableWithAbiturients.getItems().clear();
+                    //dta.removeRow(selectedIndex);
+                    System.out.println("right here");
+                    //String[] columns = {"№Л/д", "Фамилия", "Имя", "Отчество"};
+                    //String[][] data = ModelDBConnection.getAllAbiturients();
+                    //System.out.println(data.length);
+                    //dta = new DefaultTableAdapter(tableWithAbiturients, data, columns);
+
                 }
+            } catch (SQLException ex) {
+                Logger.getLogger(SampleController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
 //System.out.println(MessageProcessing.displayDialogMessage(new JPanel(), tableWithAbiturients.getSelectionModel().getSelectedIndex()));
-               /* TableViewSelectionModel selectedModel = tableWithAbiturients.getSelectionModel();
+        /* TableViewSelectionModel selectedModel = tableWithAbiturients.getSelectionModel();
                          Object selectedRow = selectedModel.getSelectedItem();
                 if(DeleteStudentController.delete){
                      tableWithAbiturients.getItems().removeAll(selectedRow );
@@ -271,157 +309,181 @@ public class SampleController implements Initializable{
                     //initTableWithAbiturients();
                 }*/
     }
-     
-    
-         
-	       @Override
-	    public void initialize(URL location, ResourceBundle resources)
-	    {
-                initTableWithAbiturients();
-                  
-                //birthday.setValue(LocalDate.now());
-	        FXMLLoader loader = new FXMLLoader();
-	        try
-	        {
-	            loader.setLocation(getClass().getResource("CompetitionGroup.fxml"));
-	            
-	            AnchorPane newPane1=(AnchorPane) loader.load();
-	            tab1.getChildren().add(newPane1);
-	        }
-	        catch(IOException iex)
-	        {
-	            System.out.println("unable to load tab1");
-	        }
 
-	        loader = new FXMLLoader();
-	        
-	         try{
-	           AnchorPane anch2 = loader.load(getClass().getResource("Exam.fxml"));
-	            tab2.getChildren().add(anch2);
-	        }
-	        catch(IOException iex)
-	        {
-	            System.out.println("unable to load tab2");
-	        }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initTableWithAbiturients();
 
-	         try{
-		           AnchorPane anch3 = loader.load(getClass().getResource("Achievements.fxml"));
-		            tab3.getChildren().add(anch3);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch4 = loader.load(getClass().getResource("Priviliges.fxml"));
-		            tab4.getChildren().add(anch4);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch5 = loader.load(getClass().getResource("100_ballov.fxml"));
-		            tab5.getChildren().add(anch5);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch6 = loader.load(getClass().getResource("Education.fxml"));
-		            tab6.getChildren().add(anch6);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch7 = loader.load(getClass().getResource("Address.fxml"));
-		            tab7.getChildren().add(anch7);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch8 = loader.load(getClass().getResource("PassportAndINN.fxml"));
-		            tab8.getChildren().add(anch8);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	         
-	         try{
-		           AnchorPane anch9 = loader.load(getClass().getResource("Additional_information.fxml"));
-		            tab9.getChildren().add(anch9);
-		        }
-		        catch(IOException iex)
-		        {
-		            System.out.println("unable to load tab2");
-		        }
-	    }
-             //public int selectedIndex = tableWithAbiturients.getSelectionModel().getSelectedIndex();
-            public void initTableWithAbiturients() {
-		String[] columns = {"№Л/д", "Фамилия", "Имя", "Отчество"};
-		String[][] data = ModelDBConnection.getAllAbiturients();
-                 
-		dta = new DefaultTableAdapter(tableWithAbiturients, data, columns);
-                
-                ObservableList<String> genderValues = FXCollections.observableArrayList(ModelDBConnection.getNamesFromTableOrderedById("Gender"));
-       gender.setItems(genderValues);
-       
-       ObservableList<String> nationalValues = FXCollections.observableArrayList(ModelDBConnection.getNamesFromTableOrderedById("Nationality"));
-    citizenship.setItems(nationalValues);
-    
-    ObservableList<String> reasonValues = FXCollections.observableArrayList(ModelDBConnection.getNamesFromTableOrderedById("ReturnReasons"));
-    reason.setItems(reasonValues);
-    
-    //String [] enrollment = ["Зачислен на 0 этапе", "Зачислен в 1 волну"];
-    ObservableList<String> enrollValues = FXCollections.observableArrayList("Зачислен на 0 этапе", 
-            "Зачислен в 1 волну","Зачислен во 2 волну", 
-            "Зачислен в волну коммерции", "Не зачислен", "Нет информации");
-    is_enrolled.setItems(enrollValues);
-    
-    tableWithAbiturients.setOnMouseClicked(e ->{
-        String [] info;
-                    try {
-                        System.out.println(dta.getValueAt( tableWithAbiturients.getSelectionModel().getSelectedIndex()  , 0));
-                        info = ModelDBConnection.getAbiturientGeneralInfoByID(dta.getValueAt( tableWithAbiturients.getSelectionModel().getSelectedIndex()  , 0).toString());
-                   // for (int i=0;i<info.length;i++){
-               //System.out.println(info[i]);
-           //}
-            surname.setText(info[1]);
-                    } catch (SQLException ex) {
-                        Logger.getLogger(SampleController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-            
-    });
-    //tableWithAbiturients.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-    if (!tableWithAbiturients.getSelectionModel().isEmpty()) {
+        //birthday.setValue(LocalDate.now());
+        FXMLLoader loader = new FXMLLoader();
         try {
-            String [] info = ModelDBConnection.getAbiturientGeneralInfoByID(dta.getValueAt( tableWithAbiturients.getSelectionModel().getSelectedIndex()  , 0).toString());
-           for (int i=0;i<info.length;i++){
-               System.out.println(info[i]);
-           }
-            surname.setText(info[1]);
-           
-            //tableview2.getSelectionModel().clearSelection();
-        } catch (SQLException ex) {
-            Logger.getLogger(SampleController.class.getName()).log(Level.SEVERE, null, ex);
+            loader.setLocation(getClass().getResource("CompetitionGroup.fxml"));
+
+            AnchorPane newPane1 = (AnchorPane) loader.load();
+            tab1.getChildren().add(newPane1);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab1");
+        }
+
+        loader = new FXMLLoader();
+
+        try {
+            AnchorPane anch2 = loader.load(getClass().getResource("Exam.fxml"));
+            tab2.getChildren().add(anch2);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab2");
+        }
+
+        try {
+            AnchorPane anch3 = loader.load(getClass().getResource("Achievements.fxml"));
+            tab3.getChildren().add(anch3);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab2");
+        }
+
+        try {
+            AnchorPane anch4 = loader.load(getClass().getResource("Priviliges.fxml"));
+            tab4.getChildren().add(anch4);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab2");
+        }
+
+        try {
+            AnchorPane anch5 = loader.load(getClass().getResource("100_ballov.fxml"));
+            tab5.getChildren().add(anch5);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab2");
+        }
+
+        try {
+            AnchorPane anch6 = loader.load(getClass().getResource("Education.fxml"));
+            tab6.getChildren().add(anch6);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab2");
+        }
+
+        try {
+            AnchorPane anch7 = loader.load(getClass().getResource("Address.fxml"));
+            tab7.getChildren().add(anch7);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab2");
+        }
+
+        try {
+            AnchorPane anch8 = loader.load(getClass().getResource("PassportAndINN.fxml"));
+            tab8.getChildren().add(anch8);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab2");
+        }
+
+        try {
+            AnchorPane anch9 = loader.load(getClass().getResource("Additional_information.fxml"));
+            tab9.getChildren().add(anch9);
+        } catch (IOException iex) {
+            System.out.println("unable to load tab2");
         }
     }
-                
-                //System.out.println(dta.getValueAt(0, 0));
-                
-		 //int selectedIndex = tableWithAbiturients.getSelectionModel().getSelectedIndex();
-		/*tableWithAbiturients.setRowFactory(table -> {
+    //public int selectedIndex = tableWithAbiturients.getSelectionModel().getSelectedIndex();
+
+    public void initTableWithAbiturients() {
+
+        String[] columns = {"№Л/д", "Фамилия", "Имя", "Отчество"};
+        String[][] data = ModelDBConnection.getAllAbiturients();
+
+        dta = new DefaultTableAdapter(tableWithAbiturients, data, columns);
+
+        ObservableList<String> genderValues = FXCollections.observableArrayList(ModelDBConnection.getNamesFromTableOrderedById("Gender"));
+        gender.setItems(genderValues);
+
+        ObservableList<String> nationalValues = FXCollections.observableArrayList(ModelDBConnection.getNamesFromTableOrderedById("Nationality"));
+        citizenship.setItems(nationalValues);
+
+        ObservableList<String> reasonValues = FXCollections.observableArrayList(ModelDBConnection.getNamesFromTableOrderedById("ReturnReasons"));
+        reason.setItems(reasonValues);
+
+        //String [] enrollment = ["Зачислен на 0 этапе", "Зачислен в 1 волну"];
+        ObservableList<String> enrollValues = FXCollections.observableArrayList("Зачислен на 0 этапе",
+                "Зачислен в 1 волну", "Зачислен во 2 волну",
+                "Зачислен в волну коммерции", "Не зачислен", "Нет информации");
+        is_enrolled.setItems(enrollValues);
+
+        tableWithAbiturients.setOnMouseClicked(e -> {
+            String[] info;
+            try {
+                System.out.println(dta.getValueAt(tableWithAbiturients.getSelectionModel().getSelectedIndex(), 0));
+                info = ModelDBConnection.getAbiturientGeneralInfoByID(dta.getValueAt(tableWithAbiturients.getSelectionModel().getSelectedIndex(), 0).toString());
+                for (int i = 0; i < info.length; i++) {
+                    System.out.println(info[i]);
+                }
+                //}
+                surname.setText(info[1]);
+                id.setText(info[0]);
+                surname.setText(info[1]);
+                name.setText(info[2]);
+                patronymic.setText(info[3]);
+
+                birthday.setValue(LocalDate.of(Integer.parseInt(info[4].split("\\.")[2]),
+                        Integer.parseInt(info[4].split("\\.")[1]), Integer.parseInt(info[4].split("\\.")[0])));
+                gender.setValue(genderValues.get(Integer.parseInt(info[5]) - 1));
+                citizenship.setValue(nationalValues.get(Integer.parseInt(info[6]) - 1));
+
+                receiveDate.setValue(LocalDate.of(Integer.parseInt(info[7].split("\\.")[2]),
+                        Integer.parseInt(info[7].split("\\.")[1]), Integer.parseInt(info[7].split("\\.")[0])));
+                reason.setValue(reasonValues.get(Integer.parseInt(info[8]) - 1));
+                returnDate.setValue(LocalDate.of(Integer.parseInt(info[9].split("\\.")[2]),
+                        Integer.parseInt(info[9].split("\\.")[1]), Integer.parseInt(info[9].split("\\.")[0])));
+                switch (info[8]) {
+                    case "0":
+                        hostel.setSelected(false);
+                        break;
+                    case "1":
+                        hostel.setSelected(true);
+                        break;
+                }
+
+                switch (info[11]) {
+                    case "0":
+                        is_enrolled.setValue(enrollValues.get(0));
+                        break;
+                    case "1":
+                        is_enrolled.setValue(enrollValues.get(1));
+                        break;
+                    case "2":
+                        is_enrolled.setValue(enrollValues.get(2));
+                        break;
+                    case "3":
+                        is_enrolled.setValue(enrollValues.get(3));
+                        break;
+                    case "-1":
+                        is_enrolled.setValue(enrollValues.get(4));
+                        break;
+                    case "":
+                        is_enrolled.setValue(enrollValues.get(5));
+                        break;
+
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(SampleController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        });
+        //tableWithAbiturients.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+        if (!tableWithAbiturients.getSelectionModel().isEmpty()) {
+            try {
+                String[] info = ModelDBConnection.getAbiturientGeneralInfoByID(dta.getValueAt(tableWithAbiturients.getSelectionModel().getSelectedIndex(), 0).toString());
+                for (int i = 0; i < info.length; i++) {
+                    System.out.println(info[i]);
+                }
+
+                //tableview2.getSelectionModel().clearSelection();
+            } catch (SQLException ex) {
+                Logger.getLogger(SampleController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        //System.out.println(dta.getValueAt(0, 0));
+        //int selectedIndex = tableWithAbiturients.getSelectionModel().getSelectedIndex();
+        /*tableWithAbiturients.setRowFactory(table -> {
             final TableRow row = new TableRow();
             row.setOnMousePressed(event -> {
                 //int selectedIndex = tableWithAbiturients.getSelectionModel().getSelectedIndex();
@@ -430,9 +492,6 @@ public class SampleController implements Initializable{
             });
             return row;
         });*/
+    }
+
 }
-             
-	    
-	}
-	
-	

@@ -28,7 +28,6 @@ public class CompetitionGroupController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
     @FXML
     private Button add;
 
@@ -40,45 +39,46 @@ public class CompetitionGroupController implements Initializable {
 
     @FXML
     void clickAdd(ActionEvent event) throws IOException {
-Stage stage;
-                stage = (Stage)add.getScene().getWindow();
-                // do what you have to do
-               // stage.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddCompetitionGroup.fxml"));
-                AnchorPane root1 = (AnchorPane) fxmlLoader.load();
-                stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
-                //stage.setTitle("Другая форма");
-                stage.setScene(new Scene(root1));
-                stage.setResizable(false);
-                //stage.setMaximized(true);
-                stage.show();
+        Stage stage;
+        stage = (Stage) add.getScene().getWindow();
+        // do what you have to do
+        // stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddCompetitionGroup.fxml"));
+        AnchorPane root1 = (AnchorPane) fxmlLoader.load();
+        stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        //stage.setTitle("Другая форма");
+        stage.setScene(new Scene(root1));
+        stage.setResizable(false);
+        //stage.setMaximized(true);
+        stage.show();
     }
 
     @FXML
     void clickEdit(ActionEvent event) throws IOException {
-Stage stage;
-                stage = (Stage)add.getScene().getWindow();
-                // do what you have to do
-               // stage.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddCompetitionGroup.fxml"));
-                AnchorPane root1 = (AnchorPane) fxmlLoader.load();
-                stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
-                //stage.setTitle("Другая форма");
-                stage.setScene(new Scene(root1));
-                stage.setResizable(false);
-                //stage.setMaximized(true);
-                stage.show();
+        Stage stage;
+        stage = (Stage) add.getScene().getWindow();
+        // do what you have to do
+        // stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddCompetitionGroup.fxml"));
+        AnchorPane root1 = (AnchorPane) fxmlLoader.load();
+        stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        //stage.setTitle("Другая форма");
+        stage.setScene(new Scene(root1));
+        stage.setResizable(false);
+        //stage.setMaximized(true);
+        stage.show();
     }
 
     @FXML
     void ClickDelete(ActionEvent event) {
 
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
