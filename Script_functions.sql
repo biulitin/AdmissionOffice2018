@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION getCount(tableName text)
+﻿CREATE OR REPLACE FUNCTION getCount(tableName text)
 RETURNS integer 
 AS 
 $$
@@ -11,7 +11,7 @@ BEGIN
 	
 	return countOf;
 END;
-$$  LANGUAGE plpgsql
+$$  LANGUAGE plpgsql;
 
 --select getCount('gender')
 
@@ -28,7 +28,7 @@ BEGIN
 	
 	return countOf;
 END;
-$$  LANGUAGE plpgsql
+$$  LANGUAGE plpgsql;
 
 --select getCountForAbitID('abiturientbvi', '1')
 
@@ -54,7 +54,7 @@ BEGIN
 	query := 'delete from Abiturient where aid = ' || aid;
 	execute query;
 END;
-$$  LANGUAGE plpgsql
+$$  LANGUAGE plpgsql;
 
 --select deleteAbiturient('2')
 
@@ -68,11 +68,12 @@ BEGIN
 	query := 'select name from ' || tableName || ' order by id';
 	RETURN QUERY EXECUTE query;
 END;
-$$  LANGUAGE plpgsql
+$$  LANGUAGE plpgsql;
 
 --select * from getNamesFromTableOrderedById('gender')
 
-CREATE procedure getAllFromTable(tableName text, name_id text)
+CREATE OR REPLACE FUNCTION getAllFromTable(tableName text, name_id text)
+RETURNS setof record
 AS 
 $$
 DECLARE 
@@ -86,7 +87,7 @@ BEGIN
 		RETURN QUERY EXECUTE query;
 	end if;
 END;
-$$  LANGUAGE plpgsql
+$$  LANGUAGE plpgsql;
 
 --select * from getAllFromTable('gender', null)
 
