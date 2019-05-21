@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION getCount(tableName text)
+CREATE OR REPLACE FUNCTION getCount(tableName text)
 RETURNS integer 
 AS 
 $$
@@ -37,9 +37,9 @@ CREATE OR REPLACE FUNCTION getAllAbiturients() returns table (aid integer, SName
     LANGUAGE SQL;
 	
 --select * from getAllAbiturients()
-
-CREATE OR REPLACE FUNCTION getAbiturientGeneralInfoByID(aid text) returns table (aid integer, SName text, FName text, MName text, Birthday Date, id_gender integer, id_nationality integer, registrationDate Date, id_returnReason integer, returnDate Date, needHostel integer)
-    AS $$ SELECT aid, SName, FName, MName, Birthday, id_gender, id_nationality, registrationDate, id_returnReason, returnDate, needHostel from Abiturient order by aid $$
+--DROP FUNCTION getAbiturientGeneralInfoByID(aid text);
+CREATE OR REPLACE FUNCTION getAbiturientGeneralInfoByID(aid text) returns table (aid integer, SName text, FName text, MName text, Birthday Date, id_gender integer, id_nationality integer, registrationDate Date, id_returnReason integer, returnDate Date, needHostel integer, is_enrolled integer)
+    AS $$ SELECT aid, SName, FName, MName, Birthday, id_gender, id_nationality, registrationDate, id_returnReason, returnDate, needHostel,is_enrolled from Abiturient where aid = aid $$
     LANGUAGE SQL;
 	
 --select * from getAbiturientGeneralInfoByID('1')
